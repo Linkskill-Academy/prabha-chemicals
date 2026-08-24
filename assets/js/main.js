@@ -200,8 +200,15 @@
     {
       id: "matic", name: "Matic Liquid", brand: "Sembaruthi",
       cats: ["laundry"], img: "assets/images/matic-liquid-bottle.jpg",
-      benefit: "Liquid detergent for matic and hand-wash laundry &mdash; deep clean with a fresh fragrance.",
-      pack: "150 ml · 500 ml · 1 L · 5 L",
+      benefit: "Detergent for matic and hand-wash laundry in retail-friendly bottles &mdash; deep clean with a fresh fragrance.",
+      pack: "150 ml · 500 ml",
+      features: ["High Clean technology", "Gentle on clothes, tough on stains", "Lemon-fresh finish"]
+    },
+    {
+      id: "liquiddetergent", name: "Liquid Detergent", brand: "Sembaruthi",
+      cats: ["laundry", "commercial"], img: "assets/images/matic-liquid-jug.jpg",
+      benefit: "Matic liquid detergent in bulk jugs for machine wash &mdash; Ultra Clean formula for bright, fresh laundry.",
+      pack: "1 L · 5 L",
       features: ["Ultra Clean for bright clothes", "Deep clean formula", "Safe for hands"]
     },
     {
@@ -251,7 +258,35 @@
 
   var CAT_LABEL = { laundry: "Laundry", dishwash: "Dishwash", floor: "Floor Care", professional: "Professional", commercial: "Commercial", customized: "Customized" };
 
-  var flaskIconSvg = '<svg viewBox="0 0 100 100" width="46%" style="opacity:.5"><path d="M42 14h16v20l16 34a7 7 0 0 1-6.2 10H32.2A7 7 0 0 1 26 68l16-34V14Z" fill="none" stroke="#0891b2" stroke-width="2.4"/><path d="M39 14h22" stroke="#0891b2" stroke-width="2.4" stroke-linecap="round"/></svg>';
+  /* Illustrated "hands formulating" scene for Customized Chemicals — no real
+     photo of the facility/team was supplied, so rather than pass off a
+     generic stock photo as if it were Prabha Chemicals' own lab, this
+     stays honestly illustrated but tells the human, hands-on formulation
+     story instead of a single static beaker icon. */
+  var formulationSceneSvg =
+    '<svg viewBox="0 0 300 200" width="86%" role="img" aria-label="Illustration of hands formulating a custom chemical blend">' +
+      '<defs>' +
+        '<linearGradient id="fsLiquidA" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a3e635"/><stop offset="100%" stop-color="#65a30d"/></linearGradient>' +
+        '<linearGradient id="fsLiquidB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#0891b2"/></linearGradient>' +
+      '</defs>' +
+      '<line x1="20" y1="164" x2="280" y2="164" stroke="#c7dbe6" stroke-width="2"/>' +
+      '<g transform="translate(70,60) rotate(-18)">' +
+        '<path d="M-14 0h28v14l16 30a7 7 0 0 1-6.4 10h-31.2A7 7 0 0 1 -14 44l16-30V0Z" fill="none" stroke="#0f1a35" stroke-width="3"/>' +
+        '<path d="M-17 0h30" stroke="#0f1a35" stroke-width="3" stroke-linecap="round"/>' +
+        '<path d="M-9 34h20a5 5 0 0 1 5 5v9a5 5 0 0 1-5 5h-20a5 5 0 0 1-5-5v-9a5 5 0 0 1 5-5Z" fill="url(#fsLiquidA)"/>' +
+      '</g>' +
+      '<path d="M118 88 Q150 108 178 118" fill="none" stroke="#8be9ff" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 7"/>' +
+      '<circle cx="150" cy="100" r="2.4" fill="#8be9ff"/><circle cx="163" cy="109" r="2" fill="#8be9ff"/>' +
+      '<g transform="translate(205,70)">' +
+        '<path d="M-16 0h32v18l20 46a9 9 0 0 1-8.3 12.6h-55.4A9 9 0 0 1 -36 64l20-46V0Z" fill="none" stroke="#0f1a35" stroke-width="3.4"/>' +
+        '<path d="M-19 0h38" stroke="#0f1a35" stroke-width="3.4" stroke-linecap="round"/>' +
+        '<path d="M-24 62h48a6 6 0 0 1 6 6v6.5a6 6 0 0 1-6 6h-48a6 6 0 0 1-6-6V68a6 6 0 0 1 6-6Z" fill="url(#fsLiquidB)"/>' +
+      '</g>' +
+      '<g fill="#0f1a35" opacity=".82">' +
+        '<path d="M42 96c-10-6-16-2-18 6-2 9 4 16 13 18l17 4 4-20-16-8Z"/>' +
+        '<path d="M232 92c11-7 18-2 20 7 2 10-4 17-14 19l-19 4-4-22 17-8Z"/>' +
+      '</g>' +
+    '</svg>';
 
   function productMediaHtml(p) {
     if (p.img) {
@@ -263,7 +298,7 @@
         '</span></div>';
     }
     return '<div class="product-media" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eefcff,#dff8fc);">' +
-      '<span class="product-brand-tag">' + p.brand + '</span>' + flaskIconSvg + '</div>';
+      '<span class="product-brand-tag">' + p.brand + '</span>' + formulationSceneSvg + '</div>';
   }
 
   function renderProducts(filter) {
@@ -316,7 +351,7 @@
     drawerContent.innerHTML =
       (p.img
         ? '<div class="drawer-media"><img src="' + p.img + '" alt="' + p.name + '"></div>'
-        : '<div class="drawer-media" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eefcff,#dff8fc);">' + flaskIconSvg + '</div>') +
+        : '<div class="drawer-media" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eefcff,#dff8fc);">' + formulationSceneSvg + '</div>') +
       '<span class="drawer-cat">' + p.brand + '</span>' +
       '<h2 class="drawer-title" id="drawerTitle">' + p.name + '</h2>' +
       '<p class="drawer-desc">' + p.benefit + '</p>' +
