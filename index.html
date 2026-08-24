@@ -1,3415 +1,707 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Prabha Chemicals Pvt Ltd | Cleaning Products Manufacturer Since 2001</title>
-
-    <meta name="description"
-          content="Prabha Chemicals Pvt Ltd manufactures detergent powder, detergent soap, matic liquid, dishwash products, floor cleaners, hotel and restaurant cleaning products and customized chemicals.">
-
-    <meta name="keywords"
-          content="Prabha Chemicals, cleaning products manufacturer, detergent powder, matic liquid, dishwash liquid, floor cleaner, hotel cleaners, customized chemicals">
-
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-          rel="stylesheet">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
-    <style>
-
-        /* =========================
-           GLOBAL VARIABLES
-        ========================== */
-
-        :root {
-            --primary: #0757a0;
-            --primary-dark: #043968;
-            --secondary: #13a36f;
-            --accent: #00b8d9;
-            --dark: #08263f;
-            --light: #f4f9fc;
-            --white: #ffffff;
-            --text: #526579;
-            --shadow: 0 15px 40px rgba(8, 38, 63, 0.10);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Poppins", sans-serif;
-            color: var(--text);
-            background: #fff;
-            overflow-x: hidden;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .section-padding {
-            padding: 90px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 55px;
-        }
-
-        .section-title .small-title {
-            color: var(--secondary);
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .section-title h2 {
-            color: var(--dark);
-            font-size: 38px;
-            font-weight: 800;
-            margin-top: 10px;
-        }
-
-        .section-title p {
-            max-width: 700px;
-            margin: 15px auto 0;
-        }
-
-        .btn-main {
-            background: var(--primary);
-            color: white;
-            border-radius: 50px;
-            padding: 13px 28px;
-            font-weight: 600;
-            border: 2px solid var(--primary);
-            transition: .3s;
-        }
-
-        .btn-main:hover {
-            background: var(--primary-dark);
-            border-color: var(--primary-dark);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .btn-green {
-            background: var(--secondary);
-            color: white;
-            border-radius: 50px;
-            padding: 13px 28px;
-            font-weight: 600;
-            border: 2px solid var(--secondary);
-            transition: .3s;
-        }
-
-        .btn-green:hover {
-            background: #087e53;
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* =========================
-           TOP BAR
-        ========================== */
-
-        .top-bar {
-            background: var(--dark);
-            color: white;
-            font-size: 13px;
-            padding: 8px 0;
-        }
-
-        .top-bar i {
-            color: #53d8a5;
-            margin-right: 5px;
-        }
-
-        /* =========================
-           NAVBAR
-        ========================== */
-
-        .navbar {
-            background: rgba(255,255,255,.97);
-            box-shadow: 0 3px 20px rgba(0,0,0,.06);
-            padding: 15px 0;
-        }
-
-        .navbar-brand {
-            color: var(--dark) !important;
-            font-weight: 800;
-            font-size: 20px;
-            line-height: 1.1;
-        }
-
-        .navbar-brand span {
-            color: var(--primary);
-        }
-
-        .navbar-brand small {
-            display: block;
-            color: var(--secondary);
-            font-size: 9px;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-        }
-
-        .nav-link {
-            color: var(--dark) !important;
-            font-weight: 500;
-            font-size: 14px;
-            margin: 0 5px;
-            transition: .3s;
-        }
-
-        .nav-link:hover {
-            color: var(--primary) !important;
-        }
-
-        /* =========================
-           HERO
-        ========================== */
-
-        .hero {
-            min-height: 700px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            background:
-                linear-gradient(100deg,
-                rgba(3,31,56,.95),
-                rgba(4,68,111,.80),
-                rgba(0,130,125,.55)),
-                url("https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=1800&q=85")
-                center/cover;
-        }
-
-        .hero-content {
-            color: white;
-            max-width: 750px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255,255,255,.12);
-            border: 1px solid rgba(255,255,255,.3);
-            padding: 8px 18px;
-            border-radius: 50px;
-            margin-bottom: 20px;
-            font-size: 13px;
-        }
-
-        .hero h1 {
-            font-size: clamp(38px, 5vw, 68px);
-            line-height: 1.08;
-            font-weight: 800;
-        }
-
-        .hero h1 span {
-            color: #68e6b3;
-        }
-
-        .hero p {
-            font-size: 17px;
-            line-height: 1.8;
-            margin: 25px 0 30px;
-            color: #e8f3f8;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .hero .btn-outline-light {
-            border-radius: 50px;
-            padding: 13px 28px;
-            font-weight: 600;
-        }
-
-        .floating-card {
-            position: absolute;
-            right: 8%;
-            bottom: 12%;
-            background: rgba(255,255,255,.95);
-            padding: 18px 22px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            color: var(--dark);
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .floating-card i {
-            color: var(--secondary);
-            font-size: 24px;
-        }
-
-        @keyframes float {
-            0%,100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        /* =========================
-           TRUST
-        ========================== */
-
-        .trust-section {
-            background: white;
-            margin-top: -50px;
-            position: relative;
-            z-index: 5;
-        }
-
-        .trust-box {
-            background: white;
-            box-shadow: var(--shadow);
-            border-radius: 18px;
-            padding: 28px 20px;
-            height: 100%;
-            text-align: center;
-            transition: .3s;
-        }
-
-        .trust-box:hover {
-            transform: translateY(-8px);
-        }
-
-        .trust-box i {
-            font-size: 32px;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-
-        .trust-box h6 {
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .trust-box p {
-            font-size: 12px;
-            margin-bottom: 0;
-        }
-
-        /* =========================
-           ABOUT
-        ========================== */
-
-        .about-section {
-            background: var(--light);
-        }
-
-        .about-img {
-            position: relative;
-        }
-
-        .about-img img {
-            border-radius: 25px;
-            width: 100%;
-            height: 480px;
-            object-fit: cover;
-            box-shadow: var(--shadow);
-        }
-
-        .experience {
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            background: var(--primary);
-            color: white;
-            border-radius: 20px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: var(--shadow);
-        }
-
-        .experience strong {
-            display: block;
-            font-size: 34px;
-        }
-
-        .about-content h2 {
-            color: var(--dark);
-            font-weight: 800;
-            font-size: 40px;
-        }
-
-        .check-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 25px;
-        }
-
-        .check-list li {
-            margin-bottom: 12px;
-        }
-
-        .check-list i {
-            color: var(--secondary);
-            margin-right: 8px;
-        }
-
-        /* =========================
-           PRODUCTS
-        ========================== */
-
-        .product-card {
-            border: none;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 35px rgba(0,0,0,.07);
-            height: 100%;
-            transition: 0.4s;
-            background: white;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow);
-        }
-
-        .product-png {
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-            background: #eef7fa;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .product-png img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 15px;
-            display: block;
-            transition: .5s;
-        }
-
-        .product-card:hover .product-png img {
-            transform: scale(1.08);
-        }
-
-        .product-body {
-            padding: 25px;
-        }
-
-        .product-body h5 {
-            color: var(--dark);
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .product-body p {
-            color: #6c757d;
-            line-height: 1.6;
-        }
-
-        .product-tag {
-            display: inline-block;
-            background: #e8f7f1;
-            color: var(--secondary);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 35px;
-        }
-
-        .filter-btn {
-            border: 1px solid #d7e2ea;
-            background: white;
-            color: var(--dark);
-            padding: 9px 18px;
-            border-radius: 50px;
-            transition: .3s;
-            cursor: pointer;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        /* Mobile View*/
-        @media(max-width: 576px) {
-
-            .product-png {
-                height: 220px;
-            }
-            .product-body {
-                padding: 18px;
-            }
-
-            .product-body h5 {
-                font-size: 18px;
-            }
-            .product-body p {
-                font-size: 14px;
-            }
-            .filter-buttons {
-                gap: 6px;
-            }
-            .filter-btn {
-                padding: 7px 12px;
-                font-size: 13px;
-            }
-
-        }
-
-        /* =========================
-           FRAGRANCE
-        ========================== */
-
-        .fragrance {
-            background:
-                linear-gradient(120deg,
-                rgba(5,49,77,.96),
-                rgba(8,110,104,.88)),
-                url("https://images.unsplash.com/photo-1611073767158-9e7b8f7f4a72?auto=format&fit=crop&w=1600&q=80")
-                center/cover;
-            color: white;
-        }
-
-        .fragrance .section-title h2 {
-            color: white;
-        }
-
-        .fragrance .section-title p {
-            color: #dceff0;
-        }
-
-        .fragrance-card {
-            background: rgba(255,255,255,.12);
-            border: 1px solid rgba(255,255,255,.18);
-            border-radius: 18px;
-            padding: 25px;
-            text-align: center;
-            color: white;
-            transition: .3s;
-        }
-
-        .fragrance-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255,255,255,.18);
-        }
-
-        .fragrance-card i {
-            font-size: 30px;
-            color: #72f0bd;
-        }
-
-        /* =========================
-           FEATURES
-        ========================== */
-
-        .feature-card {
-            padding: 30px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,.06);
-            height: 100%;
-            transition: .3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #eaf6ff;
-            color: var(--primary);
-            border-radius: 15px;
-            font-size: 26px;
-            margin-bottom: 18px;
-        }
-
-        .feature-card h5 {
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        /* =========================
-           CUSTOM CHEMICALS
-        ========================== */
-
-        .custom-section {
-            background: var(--light);
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-        }
-
-        .process-number {
-            width: 65px;
-            height: 65px;
-            margin: auto;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .process-step h6 {
-            margin-top: 15px;
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        /* =========================
-           DEALER
-        ========================== */
-
-        .dealer {
-            background:
-                linear-gradient(120deg,
-                rgba(5,39,66,.95),
-                rgba(5,103,100,.88)),
-                url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=80")
-                center/cover;
-            color: white;
-        }
-
-        .dealer h2 {
-            font-size: 42px;
-            font-weight: 800;
-        }
-
-        .dealer li {
-            margin-bottom: 12px;
-        }
-
-        .dealer i {
-            color: #62e8b0;
-            margin-right: 8px;
-        }
-
-        /* =========================
-           INDUSTRIES
-        ========================== */
-
-        .industry-card {
-            border-radius: 18px;
-            padding: 30px 20px;
-            text-align: center;
-            background: white;
-            box-shadow: 0 7px 25px rgba(0,0,0,.06);
-            height: 100%;
-            transition: .3s;
-        }
-
-        .industry-card:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-7px);
-        }
-
-        .industry-card i {
-            font-size: 35px;
-            color: var(--secondary);
-            margin-bottom: 15px;
-        }
-
-        .industry-card:hover i {
-            color: white;
-        }
-
-        .industry-card h6 {
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .industry-card:hover h6 {
-            color: white;
-        }
-
-        /* =========================
-           QUALITY
-        ========================== */
-
-        .quality-section {
-            background: #f8fbfd;
-        }
-
-        .quality-box {
-            background: white;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-        }
-
-        .certification {
-            border: 2px dashed #c8dce8;
-            padding: 30px;
-            text-align: center;
-            border-radius: 20px;
-        }
-
-        .certification i {
-            font-size: 45px;
-            color: var(--primary);
-        }
-
-        /* =========================
-           FAQ
-        ========================== */
-
-        .accordion-item {
-            border: none;
-            margin-bottom: 12px;
-            border-radius: 12px !important;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,.05);
-        }
-
-        .accordion-button {
-            font-weight: 600;
-            color: var(--dark);
-        }
-
-        .accordion-button:not(.collapsed) {
-            color: var(--primary);
-            background: #eef7ff;
-            box-shadow: none;
-        }
-
-        /* =========================
-           CONTACT
-        ========================== */
-
-        .contact-card {
-            background: white;
-            padding: 25px;
-            border-radius: 18px;
-            box-shadow: 0 7px 25px rgba(0,0,0,.06);
-            margin-bottom: 15px;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #eaf6ff;
-            color: var(--primary);
-            font-size: 22px;
-        }
-
-        .form-control,
-        .form-select {
-            border-radius: 10px;
-            padding: 13px 15px;
-            border: 1px solid #d9e4ec;
-        }
-
-        .form-control:focus,
-        .form-select:focus {
-            box-shadow: 0 0 0 3px rgba(7,87,160,.1);
-            border-color: var(--primary);
-        }
-
-        /* =========================
-           FOOTER
-        ========================== */
-
-        footer {
-            background: var(--dark);
-            color: #b7c8d6;
-            padding: 70px 0 20px;
-        }
-
-        footer h5 {
-            color: white;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        footer h3 {
-            color: white;
-            font-weight: 800;
-        }
-
-        footer a {
-            color: #b7c8d6;
-            display: block;
-            margin-bottom: 10px;
-            transition: .3s;
-        }
-
-        footer a:hover {
-            color: #5ee8b1;
-            padding-left: 4px;
-        }
-
-        .social-icons a {
-            display: inline-flex;
-            width: 40px;
-            height: 40px;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255,255,255,.08);
-            border-radius: 50%;
-            margin-right: 7px;
-        }
-
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,.1);
-            margin-top: 40px;
-            padding-top: 20px;
-            text-align: center;
-            font-size: 13px;
-        }
-
-        /* =========================
-           WHATSAPP
-        ========================== */
-
-        .whatsapp {
-            position: fixed;
-            right: 22px;
-            bottom: 22px;
-            width: 58px;
-            height: 58px;
-            background: #25D366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            z-index: 999;
-            box-shadow: 0 8px 25px rgba(37,211,102,.4);
-            transition: .3s;
-        }
-
-        .whatsapp:hover {
-            color: white;
-            transform: scale(1.1);
-        }
-
-        /* =========================
-           BACK TO TOP
-        ========================== */
-
-        #backTop {
-            position: fixed;
-            right: 25px;
-            bottom: 90px;
-            width: 42px;
-            height: 42px;
-            border: none;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            display: none;
-            z-index: 998;
-        }
-
-        /* =========================
-           ANIMATION
-        ========================== */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all .8s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* =========================
-           MOBILE
-        ========================== */
-
-        @media(max-width: 991px) {
-
-            .navbar .btn-main {
-                margin-top: 10px;
-                display: inline-block;
-            }
-
-            .floating-card {
-                display: none;
-            }
-
-            .hero {
-                min-height: 650px;
-            }
-
-            .about-img {
-                margin-bottom: 50px;
-            }
-
-        }
-
-        @media(max-width: 767px) {
-
-            .top-bar {
-                display: none;
-            }
-
-            .section-padding {
-                padding: 65px 0;
-            }
-
-            .section-title h2 {
-                font-size: 30px;
-            }
-
-            .hero {
-                min-height: 650px;
-                text-align: center;
-            }
-
-            .hero-content {
-                margin: auto;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-buttons .btn {
-                width: 100%;
-                max-width: 280px;
-            }
-
-            .about-content h2 {
-                font-size: 30px;
-            }
-
-            .experience {
-                right: 10px;
-            }
-
-            .trust-section {
-                margin-top: 0;
-            }
-
-            .dealer h2 {
-                font-size: 31px;
-            }
-
-            .whatsapp {
-                right: 15px;
-                bottom: 15px;
-            }
-
-            #backTop {
-                right: 18px;
-                bottom: 82px;
-            }
-
-        }
-
-        @media(prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: .01ms !important;
-                transition-duration: .01ms !important;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prabha Chemicals Pvt Ltd | Cleaning &amp; Chemical Products Manufacturer Since 2001</title>
+<meta name="description" content="Prabha Chemicals Pvt Ltd manufactures Sembaruthi &amp; Alfa Blue detergent powder, detergent soap, matic liquid, dishwash liquid &amp; soap, floor cleaner, kitchen cleaner, glass cleaner and customized chemicals for homes, hotels, restaurants and businesses. Trusted since 2001.">
+<meta name="keywords" content="Prabha Chemicals, Sembaruthi, Alfa Blue, cleaning products manufacturer, detergent powder, detergent soap, matic liquid, dishwash liquid, floor cleaner, hotel cleaning products, customized chemicals, Salem Tamil Nadu">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.prabhachemicals.in/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prabha Chemicals Pvt Ltd">
+<meta property="og:title" content="Prabha Chemicals | Cleaning &amp; Chemical Products Manufacturer Since 2001">
+<meta property="og:description" content="Chemistry that cleans, freshness that stays. Sembaruthi &amp; Alfa Blue detergents, dishwash, floor and glass care, plus fully customized formulations.">
+<meta property="og:image" content="https://www.prabhachemicals.in/assets/images/product-range.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Structured data: only verified facts (no fabricated address/ratings/certifications) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Prabha Chemicals Pvt Ltd",
+  "description": "Manufacturer of cleaning and chemical products — detergent powder, detergent soap, matic liquid, dishwash liquid and soap, floor cleaner, kitchen cleaner, glass cleaner and customized chemicals.",
+  "foundingDate": "2001",
+  "email": "prabhachemicals82@gmail.com",
+  "telephone": ["+91 9600272562", "+91 9003598962"],
+  "brand": ["Sembaruthi", "Alfa Blue"]
+}
+</script>
 </head>
-
 <body>
 
-<!-- =========================
-     TOP BAR
-========================= -->
+<!-- Decorative background layer: chemistry motifs (hex grid + gradient wash), purely visual -->
+<div class="bg-hexgrid" aria-hidden="true"></div>
 
-<div class="top-bar">
-    <div class="container d-flex justify-content-between">
-        <div>
-            <i class="bi bi-clock"></i>
-            Trusted Cleaning Solutions Since 2001
-        </div>
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-        <div>
-            <i class="bi bi-envelope"></i>
-            prabhachemicals82@gmail.com
-        </div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- =========================================================
+     NAVIGATION
+========================================================== -->
+<header class="site-nav" id="siteNav">
+  <div class="container nav-inner">
+    <a class="brand" href="#home" aria-label="Prabha Chemicals home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2" opacity=".35"/><path d="M20 8c-5 6-8 10-8 15a8 8 0 0 0 16 0c0-5-3-9-8-15Z" fill="currentColor"/></svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-line">PRABHA</span>
+        <span class="brand-line brand-line-accent">CHEMICALS</span>
+        <small>Cleaning &amp; Chemical Solutions</small>
+      </span>
+    </a>
+
+    <nav class="primary-links" aria-label="Primary">
+      <ul>
+        <li><a href="#home" data-nav>Home</a></li>
+        <li><a href="#products" data-nav>Products</a></li>
+        <li><a href="#why-prabha" data-nav>Why Prabha</a></li>
+        <li><a href="#formulation" data-nav>Custom Formulation</a></li>
+        <li><a href="#industries" data-nav>Industries</a></li>
+        <li><a href="#dealership" data-nav>Dealership</a></li>
+        <li><a href="#about" data-nav>About</a></li>
+        <li><a href="#contact" data-nav>Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-primary btn-sm">Get a Quote</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-</div>
+  </div>
 
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="#home" data-nav>Home</a></li>
+      <li><a href="#products" data-nav>Products</a></li>
+      <li><a href="#why-prabha" data-nav>Why Prabha</a></li>
+      <li><a href="#formulation" data-nav>Custom Formulation</a></li>
+      <li><a href="#industries" data-nav>Industries</a></li>
+      <li><a href="#dealership" data-nav>Dealership</a></li>
+      <li><a href="#about" data-nav>About</a></li>
+      <li><a href="#contact" data-nav>Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary btn-block">Get a Quote</a>
+  </div>
+</header>
 
-<!-- =========================
-     NAVBAR
-========================= -->
+<main id="main">
 
-<nav class="navbar navbar-expand-lg sticky-top">
-
-    <div class="container">
-
-        <a class="navbar-brand" href="#home">
-
-            PRABHA <span>CHEMICALS</span> PVT LTD
-
-            <small>
-                CLEANING & CHEMICAL PRODUCTS MANUFACTURER
-            </small>
-
-        </a>
-
-        <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainNav">
-
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-
-        <div class="collapse navbar-collapse" id="mainNav">
-
-            <ul class="navbar-nav ms-auto align-items-lg-center">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#products">Products</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#industries">Industries</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#quality">Quality</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#custom">Customized</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#dealer">Dealers</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="btn btn-main ms-lg-2"
-                       href="#contact">
-                        Request Quote
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</nav>
-
-
-<!-- =========================
+<!-- =========================================================
      HERO
-========================= -->
-
+========================================================== -->
 <section class="hero" id="home">
+  <div class="hero-particles" aria-hidden="true" id="heroParticles"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Cleaning Science &mdash; Since 2001</p>
+      <h1 class="hero-title">
+        <span class="mask-line"><span>Chemistry That Cleans.</span></span>
+        <span class="mask-line"><span class="grad-text">Freshness That Stays.</span></span>
+      </h1>
+      <p class="hero-sub">
+        Prabha Chemicals manufactures Sembaruthi &amp; Alfa Blue cleaning and chemical
+        solutions for homes, institutions, hotels, restaurants, businesses,
+        distributors and customized applications.
+      </p>
+      <div class="hero-ctas">
+        <a href="#products" class="btn btn-primary btn-lg magnetic">
+          Explore Products <span class="arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <a href="#contact" class="btn btn-ghost-light btn-lg magnetic">Request a Quote</a>
+      </div>
+      <a href="#dealership" class="hero-tertiary">Become a Distributor <span aria-hidden="true">&rarr;</span></a>
 
-    <div class="container">
-
-        <div class="hero-content reveal">
-
-            <span class="hero-badge">
-                <i class="bi bi-patch-check-fill"></i>
-                Manufacturing Excellence Since 2001
-            </span>
-
-            <h1>
-                Powerful Cleaning.
-                <span>Refreshing Fragrance.</span>
-                Trusted Quality.
-            </h1>
-
-            <p>
-                PRABHA CHEMICALS PVT LTD manufactures reliable
-                cleaning and chemical products for homes,
-                hotels, restaurants, commercial businesses and
-                customized applications.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#products"
-                   class="btn btn-main">
-                    Explore Products
-                </a>
-
-                <a href="#dealer"
-                   class="btn btn-green">
-                    Become a Dealer
-                </a>
-
-                <a href="#contact"
-                   class="btn btn-outline-light">
-                    Contact Us
-                </a>
-
-            </div>
-
-        </div>
-
+      <dl class="hero-stats" aria-label="Company highlights">
+        <div><dt><span class="count-up" data-count="2001">0</span></dt><dd>Manufacturing since</dd></div>
+        <div><dt><span class="count-up" data-count="9">0</span>+</dt><dd>Product formulations</dd></div>
+        <div><dt><span class="count-up" data-count="2">0</span></dt><dd>Trusted brands</dd></div>
+      </dl>
     </div>
 
+    <div class="hero-visual" aria-hidden="true">
+      <svg class="flask-svg" viewBox="0 0 420 480" role="img" aria-label="Illustration of a laboratory flask with chemical liquid">
+        <defs>
+          <linearGradient id="liquidGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#22d3ee"/>
+            <stop offset="100%" stop-color="#0891b2"/>
+          </linearGradient>
+          <radialGradient id="glowGrad" cx="50%" cy="45%" r="60%">
+            <stop offset="0%" stop-color="#22d3ee" stop-opacity=".45"/>
+            <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
 
-    <div class="floating-card">
+        <circle class="orbit-ring" cx="210" cy="230" r="185" fill="none" stroke="#8be9ff" stroke-opacity=".18" stroke-width="1"/>
+        <circle class="orbit-ring orbit-ring-2" cx="210" cy="230" r="150" fill="none" stroke="#8be9ff" stroke-opacity=".14" stroke-width="1"/>
 
-        <div class="d-flex align-items-center gap-3">
+        <circle cx="210" cy="230" r="150" fill="url(#glowGrad)"/>
 
-            <i class="bi bi-droplet-half"></i>
+        <!-- flask -->
+        <g class="flask-body">
+          <path d="M170 70h80v90l58 130a26 26 0 0 1-24 36H136a26 26 0 0 1-24-36l58-130V70Z"
+                fill="rgba(255,255,255,0.06)" stroke="rgba(139,233,255,0.55)" stroke-width="2.5"/>
+          <path d="M160 70h100" stroke="rgba(139,233,255,0.55)" stroke-width="2.5" stroke-linecap="round"/>
+          <clipPath id="flaskClip">
+            <path d="M170 160l-52 118a24 24 0 0 0 22 34h140a24 24 0 0 0 22-34l-52-118Z"/>
+          </clipPath>
+          <g clip-path="url(#flaskClip)">
+            <rect class="liquid-wave" x="90" y="190" width="240" height="140" fill="url(#liquidGrad)"/>
+            <path class="liquid-surface" d="M90 196 Q 130 182 170 196 T 250 196 T 330 196 V340 H90 Z" fill="url(#liquidGrad)" opacity=".9"/>
+          </g>
+        </g>
 
-            <div>
-                <strong>Quality Cleaning</strong>
-                <small class="d-block">
-                    Trusted products
-                </small>
-            </div>
+        <!-- rising bubbles -->
+        <g class="bubbles">
+          <circle class="bubble" cx="180" cy="300" r="4"/>
+          <circle class="bubble" cx="200" cy="310" r="3"/>
+          <circle class="bubble" cx="225" cy="295" r="5"/>
+          <circle class="bubble" cx="245" cy="305" r="3"/>
+          <circle class="bubble" cx="195" cy="280" r="2.5"/>
+        </g>
 
-        </div>
+        <!-- orbiting molecule cluster -->
+        <g class="molecule molecule-1">
+          <line x1="330" y1="120" x2="365" y2="95" stroke="#a3e635" stroke-width="2"/>
+          <line x1="330" y1="120" x2="330" y2="150" stroke="#a3e635" stroke-width="2"/>
+          <circle cx="330" cy="120" r="7" fill="#a3e635"/>
+          <circle cx="365" cy="95" r="5" fill="#eefcff"/>
+          <circle cx="330" cy="150" r="5" fill="#eefcff"/>
+        </g>
+        <g class="molecule molecule-2">
+          <line x1="70" y1="330" x2="45" y2="360" stroke="#22d3ee" stroke-width="2"/>
+          <line x1="70" y1="330" x2="100" y2="345" stroke="#22d3ee" stroke-width="2"/>
+          <circle cx="70" cy="330" r="6" fill="#22d3ee"/>
+          <circle cx="45" cy="360" r="4" fill="#eefcff"/>
+          <circle cx="100" cy="345" r="4" fill="#eefcff"/>
+        </g>
+        <g class="molecule molecule-3">
+          <line x1="90" y1="110" x2="60" y2="90" stroke="#34d399" stroke-width="2"/>
+          <circle cx="90" cy="110" r="5" fill="#34d399"/>
+          <circle cx="60" cy="90" r="3.5" fill="#eefcff"/>
+        </g>
 
+        <!-- droplets -->
+        <path class="droplet droplet-1" d="M300 260c8 10 8 20-0 20s-8-10 0-20Z" fill="#8be9ff" opacity=".8"/>
+        <path class="droplet droplet-2" d="M120 250c6 8 6 16 0 16s-6-8 0-16Z" fill="#8be9ff" opacity=".7"/>
+      </svg>
+
+      <div class="floating-label label-1">Laundry Care</div>
+      <div class="floating-label label-2">Surface Care</div>
+      <div class="floating-label label-3">Professional Cleaning</div>
+      <div class="floating-label label-4">Custom Formulation</div>
     </div>
+  </div>
 
+  <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,64 C240,110 480,20 720,50 C960,80 1200,110 1440,60 L1440,120 L0,120 Z" fill="var(--white)"/>
+  </svg>
 </section>
 
-
-<!-- =========================
-     TRUST BADGES
-========================= -->
-
-<section class="trust-section">
-
-    <div class="container">
-
-        <div class="row g-3">
-
-            <div class="col-6 col-lg-2">
-                <div class="trust-box">
-                    <i class="bi bi-calendar-check"></i>
-                    <h6>Since 2001</h6>
-                    <p>Manufacturing experience</p>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-2">
-                <div class="trust-box">
-                    <i class="bi bi-award"></i>
-                    <h6>Quality Focused</h6>
-                    <p>Consistent standards</p>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-2">
-                <div class="trust-box">
-                    <i class="bi bi-droplet"></i>
-                    <h6>pH Balanced</h6>
-                    <p>Product-specific options</p>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-2">
-                <div class="trust-box">
-                    <i class="bi bi-heart"></i>
-                    <h6>Skin-Friendly</h6>
-                    <p>Selected formulations</p>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-2">
-                <div class="trust-box">
-                    <i class="bi bi-patch-check"></i>
-                    <h6>Certified</h6>
-                    <p>Where officially applicable</p>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-2">
-                <div class="trust-box">
-                    <i class="bi bi-people"></i>
-                    <h6>Customer Reliable</h6>
-                    <p>Service focused</p>
-                </div>
-            </div>
-
-        </div>
-
+<!-- =========================================================
+     TRUST STRIP
+========================================================== -->
+<section class="trust-strip">
+  <div class="container trust-strip-inner">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4M12 18v4M4 12H2m20 0h-2M6 6l1.4 1.4M16.6 16.6 18 18M6 18l1.4-1.4M16.6 7.4 18 6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+      <span>Since 2001</span>
     </div>
-
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Quality-Focused Manufacturing</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11Z" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+      <span>Custom Formulations</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+      <span>Bulk Supply</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="8" r="3" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="17" cy="8" r="3" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M2 20c0-3 2.5-5 5-5s5 2 5 5M12 20c0-3 2.5-5 5-5s5 2 5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      <span>Dealer Network</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9" width="6" height="11" rx="1" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="14" y="4" width="6" height="16" rx="1" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+      <span>Multiple Pack Sizes</span>
+    </div>
+  </div>
 </section>
 
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section class="section-padding about-section" id="about">
-
-    <div class="container">
-
-        <div class="row align-items-center g-5">
-
-            <div class="col-lg-6 reveal">
-
-                <div class="about-img">
-
-                    <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?auto=format&fit=crop&w=1000&q=80"
-                         alt="Chemical cleaning products manufacturing">
-
-                    <div class="experience">
-
-                        <strong>25+</strong>
-
-                        Years Experience
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-6 reveal">
-
-                <div class="about-content">
-
-                    <span class="small-title text-success fw-bold">
-                        ABOUT OUR COMPANY
-                    </span>
-
-                    <h2 class="mt-2">
-                        Trusted Cleaning Solutions Since 2001
-                    </h2>
-
-                    <p class="mt-3">
-
-                        PRABHA CHEMICALS PVT LTD is a cleaning
-                        and chemical products manufacturing company
-                        focused on developing reliable cleaning
-                        solutions for homes, businesses and
-                        professional applications.
-
-                    </p>
-
-                    <p>
-
-                        Our product portfolio includes laundry
-                        products, dishwashing solutions, floor
-                        cleaners, hotel and restaurant cleaning
-                        products and customized chemical solutions.
-
-                    </p>
-
-                    <ul class="check-list">
-
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            Quality-focused manufacturing
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            Attractive fragrance options
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            Customized formulation support
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            Dealer and distributor opportunities
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            Customer-focused service
-                        </li>
-
-                    </ul>
-
-                    <a href="#products"
-                       class="btn btn-main mt-3">
-                        Explore Our Products
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
+<!-- =========================================================
+     PRODUCT UNIVERSE
+========================================================== -->
+<section class="section section-white" id="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow eyebrow-dark">Product Universe</p>
+      <h2 class="section-title">Formulated for Every Clean</h2>
+      <p class="section-sub">Nine formulations across our Sembaruthi and Alfa&nbsp;Blue brand lines &mdash; built for
+        laundry, dishwashing, floor care and professional cleaning, plus fully customized chemistry for your brand.</p>
     </div>
 
-</section>
-
-
-<!-- =========================
-     PRODUCTS
-========================= -->
-
-<section class="section-padding" id="products">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <span class="small-title">
-                OUR PRODUCTS
-            </span>
-
-            <h2>
-                Complete Cleaning Product Range
-            </h2>
-
-            <p>
-                Professional and consumer cleaning solutions
-                designed for different cleaning requirements.
-            </p>
-
-        </div>
-
-
-        <!-- Search -->
-
-        <div class="row justify-content-center mb-4">
-
-            <div class="col-lg-6">
-
-                <div class="input-group">
-
-                    <span class="input-group-text bg-white">
-                        <i class="bi bi-search"></i>
-                    </span>
-
-                    <input type="text"
-                           id="productSearch"
-                           class="form-control"
-                           placeholder="Search products...">
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- Filters -->
-
-        <div class="filter-buttons">
-
-            <button class="filter-btn active"
-                    data-filter="all">
-                All
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="laundry">
-                Laundry
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="dishwash">
-                Dishwash
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="floor">
-                Floor Care
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="hotel">
-                Hotel
-            </button>
-
-            <button class="filter-btn"
-                    data-filter="commercial">
-                Commercial
-            </button>
-
-        </div>
-
-
-        <div class="row g-4" id="productGrid">
-
-
-            <!-- PRODUCT 1 -->
-
-            <div class="col-md-6 col-lg-4 product-item"
-                 data-category="laundry"
-                 data-name="Detergent Washing Powder">
-
-                <div class="product-card">
-
-                    <div class="product-img">
-
-                        <img src="/detegent washing powder.png"
-                             alt="Detergent Washing Powder">
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <span class="product-tag">
-                            LAUNDRY
-                        </span>
-
-                        <h5>
-                            Detergent Washing Powder
-                        </h5>
-
-                        <p>
-                            Effective laundry cleaning
-                            with pleasant fragrance options.
-                        </p>
-
-                        <button class="btn btn-sm btn-main"
-                                data-bs-toggle="modal"
-                                data-bs-target="#productModal"
-                                data-product="Detergent Washing Powder">
-                            500 g, 1 kg, 2 kg, 5 kg
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 2 -->
-
-            <div class="col-md-6 col-lg-4 product-item"
-                 data-category="laundry"
-                 data-name="Detergent Soap">
-
-                <div class="product-card">
-
-                    <div class="product-img">
-
-                        <img src="/detergent soap.png"
-                             alt="Detergent Soap">
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <span class="product-tag">
-                            LAUNDRY
-                        </span>
-
-                        <h5>
-                            Detergent Soap
-                        </h5>
-
-                        <p>
-                            Convenient laundry bar for
-                            regular washing requirements.
-                        </p>
-
-                        <button class="btn btn-sm btn-main"
-                                data-bs-toggle="modal"
-                                data-bs-target="#productModal"
-                                data-product="Detergent Washing Soap">
-                            170 g, 250 g
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 3 -->
-
-            <div class="col-md-6 col-lg-4 product-item"
-                 data-category="laundry"
-                 data-name="Matic Liquid">
-
-                <div class="product-card">
-
-                    <div class="product-img">
-
-                        <img src="/matic liquid.png"
-                             alt="Matic Liquid">
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <span class="product-tag">
-                            LAUNDRY
-                        </span>
-
-                        <h5>
-                            Matic Liquid
-                        </h5>
-
-                        <p>
-                            Convenient liquid laundry
-                            cleaning solution.
-                        </p>
-
-                        <button class="btn btn-sm btn-main"
-                                data-bs-toggle="modal"
-                                data-bs-target="#productModal"
-                                data-product="Matic Liquid">
-                            500 ml, 1 Litre, 5 Litre
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 4 -->
-
-            <div class="col-md-6 col-lg-4 product-item"
-                 data-category="dishwash"
-                 data-name="Dishwash Liquid">
-
-                <div class="product-card">
-
-                    <div class="product-img">
-
-                        <img src="/dishwash liquid.png"
-                             alt="Dishwash Liquid">
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <span class="product-tag">
-                            DISHWASH
-                        </span>
-
-                        <h5>
-                            Dishwash Liquid
-                        </h5>
-
-                        <p>
-                            Kitchen cleaning solution
-                            with grease-cleaning performance.
-                        </p>
-
-                        <button class="btn btn-sm btn-main"
-                                data-bs-toggle="modal"
-                                data-bs-target="#productModal"
-                                data-product="Dishwash Liquid">
-                            500 ml, 1 Litre, 5 Litre
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 5 -->
-
-            <div class="col-md-6 col-lg-4 product-item"
-                 data-category="dishwash"
-                 data-name="Dishwash">
-
-                <div class="product-card">
-
-                    <div class="product-img">
-
-                        <img src="/dishwash soap.png"
-                             alt="Dishwash Soap">
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <span class="product-tag">
-                            DISHWASH
-                        </span>
-
-                        <h5>
-                            Dishwash Soap
-                        </h5>
-
-                        <p>
-                            Convenient dish cleaning
-                            bar for kitchen applications.
-                        </p>
-
-                        <button class="btn btn-sm btn-main"
-                                data-bs-toggle="modal"
-                                data-bs-target="#productModal"
-                                data-product="Dishwash Soap">
-                            170 g, 250 g
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 6 -->
-
-            <div class="col-md-6 col-lg-4 product-item"
-                 data-category="floor"
-                 data-name="Floor Cleaner">
-
-                <div class="product-card">
-
-                    <div class="product-img">
-
-                        <img src="/floor cleaner.png"
-                             alt="Floor Cleaner">
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <span class="product-tag">
-                            FLOOR CARE
-                        </span>
-
-                        <h5>
-                            Floor Cleaner
-                        </h5>
-
-                        <p>
-                            Fresh-fragrance floor cleaning
-                            solution for multiple applications.
-                        </p>
-
-                        <button class="btn btn-sm btn-main"
-                                data-bs-toggle="modal"
-                                data-bs-target="#productModal"
-                                data-product="Floor Cleaner">
-                            1L 5L
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 7 -->
-
-            <div class="col-md-6 col-lg-4 product-item"
-                 data-category="hotel"
-                 data-name="Kitchen Cleaner">
-
-                <div class="product-card">
-
-                    <div class="product-img">
-
-                        <img src="/kitchen cleaner.png"
-                             alt="Kitchen Cleaner">
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <span class="product-tag">
-                            HOTEL,home,Restaurant
-                        </span>
-
-                        <h5>
-                            Kitchen Cleaner
-                        </h5>
-
-                        <p>
-                            Professional cleaning solution
-                            for kitchen and food-service areas.
-                        </p>
-
-                        <button class="btn btn-sm btn-main"
-                                data-bs-toggle="modal"
-                                data-bs-target="#productModal"
-                                data-product="Kitchen Cleaner">
-                            1L 5L
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 8 -->
-
-            <div class="col-md-6 col-lg-4 product-item"
-                 data-category="commercial"
-                 data-name="Glass Cleaner">
-
-                <div class="product-card">
-
-                    <div class="product-img">
-
-                        <img src="/glass cleaner.png"
-                             alt="Glass Cleaner">
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <span class="product-tag">
-                            COMMERCIAL
-                        </span>
-
-                        <h5>
-                            Glass Cleaner
-                        </h5>
-
-                        <p>
-                            Professional glass and surface
-                            cleaning solution.
-                        </p>
-
-                        <button class="btn btn-sm btn-main"
-                                data-bs-toggle="modal"
-                                data-bs-target="#productModal"
-                                data-product="Glass Cleaner">
-                            500 ml, 1 L, 5 L
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 9 -->
-
-            <div class="col-md-6 col-lg-4 product-item"
-                 data-category="commercial"
-                 data-name="Customized Chemicals">
-
-                <div class="product-card">
-
-                    <div class="product-img">
-
-                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80"
-                             alt="Customized Chemicals">
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <span class="product-tag">
-                            CUSTOMIZED
-                        </span>
-
-                        <h5>
-                            Customized Chemicals
-                        </h5>
-
-                        <p>
-                            Customized formulation solutions
-                            based on customer requirements.
-                        </p>
-
-                        <button class="btn btn-sm btn-main"
-                                data-bs-toggle="modal"
-                                data-bs-target="#productModal"
-                                data-product="Customized Chemicals">
-                            View Details
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
+    <div class="segmented-control reveal" id="productFilters" role="tablist" aria-label="Filter products by category">
+      <button class="seg-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="seg-btn" data-filter="laundry" role="tab" aria-selected="false">Laundry</button>
+      <button class="seg-btn" data-filter="dishwash" role="tab" aria-selected="false">Dishwash</button>
+      <button class="seg-btn" data-filter="floor" role="tab" aria-selected="false">Floor Care</button>
+      <button class="seg-btn" data-filter="professional" role="tab" aria-selected="false">Professional</button>
+      <button class="seg-btn" data-filter="commercial" role="tab" aria-selected="false">Commercial</button>
+      <button class="seg-btn" data-filter="customized" role="tab" aria-selected="false">Customized</button>
     </div>
 
+    <div class="product-grid" id="productGrid" aria-live="polite"></div>
+  </div>
 </section>
 
-
-<!-- =========================
-     SUPER PERFUME
-========================= -->
-
-<section class="section-padding fragrance">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <span class="small-title">
-                FRAGRANCE COLLECTION
-            </span>
-
-            <h2>
-                Super Perfume Technology
-            </h2>
-
-            <p>
-                Fresh Cleaning. Refreshing Fragrance.
-                A better after-cleaning experience.
-            </p>
-
-        </div>
-
-
-        <div class="row g-4">
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="fragrance-card">
-                    <i class="bi bi-flower1"></i>
-                    <h6 class="mt-3">Jasmine</h6>
-                    <small>Fresh floral</small>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="fragrance-card">
-                    <i class="bi bi-brightness-high"></i>
-                    <h6 class="mt-3">Lemon Fresh</h6>
-                    <small>Citrus freshness</small>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="fragrance-card">
-                    <i class="bi bi-flower2"></i>
-                    <h6 class="mt-3">Rose</h6>
-                    <small>Premium floral</small>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="fragrance-card">
-                    <i class="bi bi-wind"></i>
-                    <h6 class="mt-3">Ocean Fresh</h6>
-                    <small>Clean & refreshing</small>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="fragrance-card">
-                    <i class="bi bi-stars"></i>
-                    <h6 class="mt-3">Lavender</h6>
-                    <small>Soft fragrance</small>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="fragrance-card">
-                    <i class="bi bi-droplet"></i>
-                    <h6 class="mt-3">Citrus</h6>
-                    <small>Bright fragrance</small>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="fragrance-card">
-                    <i class="bi bi-heart"></i>
-                    <h6 class="mt-3">Floral Fresh</h6>
-                    <small>Premium option</small>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="fragrance-card">
-                    <i class="bi bi-magic"></i>
-                    <h6 class="mt-3">Custom</h6>
-                    <small>Your fragrance</small>
-                </div>
-            </div>
-
-        </div>
-
+<!-- =========================================================
+     FRAGRANCE
+========================================================== -->
+<section class="section section-navy fragrance-section" id="fragrance">
+  <div class="hero-particles" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Fragrance Experience</p>
+      <h2 class="section-title section-title-light">Freshness, Engineered.</h2>
+      <p class="section-sub section-sub-light">Cleaning performance meets fragrance experience &mdash; select formulations
+        carry fragrance options like these, tailored to product and application.</p>
     </div>
 
+    <div class="orb-grid reveal">
+      <button class="orb-card" data-orb="jasmine"><span class="orb orb-jasmine"></span><span class="orb-label">Jasmine</span></button>
+      <button class="orb-card" data-orb="lemon"><span class="orb orb-lemon"></span><span class="orb-label">Lemon Fresh</span></button>
+      <button class="orb-card" data-orb="rose"><span class="orb orb-rose"></span><span class="orb-label">Rose</span></button>
+      <button class="orb-card" data-orb="ocean"><span class="orb orb-ocean"></span><span class="orb-label">Ocean Fresh</span></button>
+      <button class="orb-card" data-orb="lavender"><span class="orb orb-lavender"></span><span class="orb-label">Lavender</span></button>
+      <button class="orb-card" data-orb="citrus"><span class="orb orb-citrus"></span><span class="orb-label">Citrus</span></button>
+      <button class="orb-card" data-orb="floral"><span class="orb orb-floral"></span><span class="orb-label">Floral Fresh</span></button>
+      <button class="orb-card" data-orb="custom"><span class="orb orb-custom"></span><span class="orb-label">Custom</span></button>
+    </div>
+    <p class="fragrance-note reveal">Fragrance availability varies by product &mdash; ask us which options apply to your requirement.</p>
+  </div>
 </section>
 
-
-<!-- =========================
-     SKIN FRIENDLY
-========================= -->
-
-<section class="section-padding">
-
-    <div class="container">
-
-        <div class="row align-items-center g-5">
-
-            <div class="col-lg-6 reveal">
-
-                <span class="small-title text-success fw-bold">
-                    SMART FORMULATION
-                </span>
-
-                <h2 class="display-5 fw-bold text-dark mt-2">
-                    Gentle Formulation.
-                    Smart Cleaning.
-                </h2>
-
-                <p class="mt-3">
-
-                    Selected products can be developed with
-                    skin-friendly and pH-balanced formulation
-                    requirements depending on the intended
-                    application and product specification.
-
-                </p>
-
-                <div class="row g-3 mt-3">
-
-                    <div class="col-6">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="bi bi-droplet-half"></i>
-                            </div>
-                            <h5>pH Balanced</h5>
-                            <p>
-                                Product-specific formulation options.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-6">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="bi bi-heart"></i>
-                            </div>
-                            <h5>Skin-Friendly</h5>
-                            <p>
-                                Gentle formulation options where applicable.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-6 reveal">
-
-                <div class="p-5 rounded-4"
-                     style="background:#eef8f6;">
-
-                    <h4 class="fw-bold text-dark">
-                        Formulation Focus
-                    </h4>
-
-                    <ul class="check-list">
-
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            Carefully selected ingredients
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            pH specification
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            Product-specific testing
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            Quality-focused formulation
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            Customer requirement based development
-                        </li>
-
-                    </ul>
-
-                    <div class="alert alert-info mt-4">
-
-                        Product suitability and skin-contact claims
-                        depend on the specific formulation and
-                        applicable testing/certification.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
+<!-- =========================================================
+     CUSTOM FORMULATION
+========================================================== -->
+<section class="section section-pale" id="formulation">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow eyebrow-dark">Custom Formulation</p>
+      <h2 class="section-title">Your Requirement. Our Formulation.</h2>
+      <p class="section-sub">A structured, six-stage journey from brief to bulk production.</p>
     </div>
 
-</section>
-
-
-<!-- =========================
-     CUSTOM CHEMICALS
-========================= -->
-
-<section class="section-padding custom-section"
-         id="custom">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <span class="small-title">
-                CUSTOM FORMULATION
-            </span>
-
-            <h2>
-                Customized Chemical Solutions
-            </h2>
-
-            <p>
-                Your requirement. Our formulation expertise.
-            </p>
-
-        </div>
-
-
-        <div class="row g-4 mb-5">
-
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="bi bi-droplet"></i>
-                    </div>
-                    <h5>Cleaning Performance</h5>
-                    <p>
-                        Formulation based on required application
-                        and cleaning performance.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="bi bi-palette"></i>
-                    </div>
-                    <h5>Fragrance & Colour</h5>
-                    <p>
-                        Customized fragrance and colour options
-                        according to requirements.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="bi bi-box-seam"></i>
-                    </div>
-                    <h5>Packaging</h5>
-                    <p>
-                        Packaging and quantity options based on
-                        product requirements.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="row g-4">
-
-            <div class="col-6 col-lg-2">
-                <div class="process-step">
-                    <div class="process-number">01</div>
-                    <h6>Requirement</h6>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-2">
-                <div class="process-step">
-                    <div class="process-number">02</div>
-                    <h6>Specification</h6>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-2">
-                <div class="process-step">
-                    <div class="process-number">03</div>
-                    <h6>Sample</h6>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-2">
-                <div class="process-step">
-                    <div class="process-number">04</div>
-                    <h6>Testing</h6>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-2">
-                <div class="process-step">
-                    <div class="process-number">05</div>
-                    <h6>Finalization</h6>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-2">
-                <div class="process-step">
-                    <div class="process-number">06</div>
-                    <h6>Production</h6>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="text-center mt-5">
-
-            <a href="#contact"
-               class="btn btn-main">
-                Discuss Your Custom Product
-            </a>
-
-        </div>
-
+    <div class="formulation-timeline reveal" id="formulationTimeline">
+      <svg class="timeline-line" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="40" y1="20" x2="1160" y2="20" stroke="rgba(15,26,53,0.12)" stroke-width="2"/>
+        <line class="timeline-line-fill" x1="40" y1="20" x2="1160" y2="20" stroke="#06b6d4" stroke-width="2"/>
+      </svg>
+      <div class="timeline-node" data-step="1"><span class="node-dot">01</span><h3>Requirement</h3></div>
+      <div class="timeline-node" data-step="2"><span class="node-dot">02</span><h3>Specification</h3></div>
+      <div class="timeline-node" data-step="3"><span class="node-dot">03</span><h3>Sample</h3></div>
+      <div class="timeline-node" data-step="4"><span class="node-dot">04</span><h3>Testing</h3></div>
+      <div class="timeline-node" data-step="5"><span class="node-dot">05</span><h3>Finalization</h3></div>
+      <div class="timeline-node" data-step="6"><span class="node-dot">06</span><h3>Production</h3></div>
     </div>
 
-</section>
-
-
-<!-- =========================
-     QUALITY
-========================= -->
-
-<section class="section-padding quality-section"
-         id="quality">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <span class="small-title">
-                QUALITY & SAFETY
-            </span>
-
-            <h2>
-                Quality You Can Trust
-            </h2>
-
-            <p>
-                A quality-focused approach from raw material
-                selection to finished product.
-            </p>
-
-        </div>
-
-
-        <div class="row g-4">
-
-            <div class="col-lg-8">
-
-                <div class="quality-box">
-
-                    <div class="row g-4">
-
-                        <div class="col-md-6">
-
-                            <ul class="check-list">
-
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Raw material selection
-                                </li>
-
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Formulation control
-                                </li>
-
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Batch consistency
-                                </li>
-
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Quality checks
-                                </li>
-
-                            </ul>
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <ul class="check-list">
-
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Packaging inspection
-                                </li>
-
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Product documentation
-                                </li>
-
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Customer feedback
-                                </li>
-
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Continuous improvement
-                                </li>
-
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-4">
-
-                <div class="certification">
-
-                    <i class="bi bi-patch-check"></i>
-
-                    <h4 class="mt-3 text-dark fw-bold">
-                        ISO Certified
-                    </h4>
-
-                    <p>
-                        Display the exact ISO standard and
-                        certificate details here after verification.
-                    </p>
-
-                    <small>
-                        [ISO CERTIFICATE DETAILS]
-                    </small>
-
-                </div>
-
-            </div>
-
-        </div>
-
+    <div class="chip-row reveal">
+      <span class="chip">Cleaning Performance</span>
+      <span class="chip">Fragrance &amp; Colour</span>
+      <span class="chip">Packaging</span>
+      <span class="chip">pH Specification (where applicable)</span>
+      <span class="chip">Product-Specific Requirements</span>
+      <span class="chip">Quantity Requirements</span>
     </div>
 
+    <div class="text-center reveal">
+      <a href="#contact" class="btn btn-primary">Discuss Your Custom Product</a>
+    </div>
+  </div>
 </section>
 
-
-<!-- =========================
+<!-- =========================================================
      INDUSTRIES
-========================= -->
-
-<section class="section-padding"
-         id="industries">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span class="small-title">
-                INDUSTRIES WE SERVE
-            </span>
-
-            <h2>
-                Cleaning Solutions For Every Need
-            </h2>
-
-        </div>
-
-
-        <div class="row g-4">
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="industry-card">
-                    <i class="bi bi-house-door"></i>
-                    <h6>Households</h6>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="industry-card">
-                    <i class="bi bi-building"></i>
-                    <h6>Hotels</h6>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="industry-card">
-                    <i class="bi bi-cup-hot"></i>
-                    <h6>Restaurants</h6>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="industry-card">
-                    <i class="bi bi-shop"></i>
-                    <h6>Cafes</h6>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="industry-card">
-                    <i class="bi bi-hospital"></i>
-                    <h6>Hospitals</h6>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="industry-card">
-                    <i class="bi bi-briefcase"></i>
-                    <h6>Offices</h6>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="industry-card">
-                    <i class="bi bi-mortarboard"></i>
-                    <h6>Schools</h6>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="industry-card">
-                    <i class="bi bi-truck"></i>
-                    <h6>Distributors</h6>
-                </div>
-            </div>
-
-        </div>
-
+========================================================== -->
+<section class="section section-white" id="industries">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow eyebrow-dark">Who We Serve</p>
+      <h2 class="section-title">Cleaning Solutions For Every Setting</h2>
+      <p class="section-sub">From individual households to hotels, restaurants, offices and large institutional kitchens.</p>
     </div>
 
+    <div class="industries-rail reveal" id="industriesRail">
+      <div class="industry-card"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><h3>Households</h3></div>
+      <div class="industry-card"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><h3>Hotels</h3></div>
+      <div class="industry-card"><svg viewBox="0 0 24 24"><path d="M4 9c0-2 1.5-4 3-4M17 9V5M20 9V5M4 9h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 20h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><h3>Restaurants</h3></div>
+      <div class="industry-card"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6"/></svg><h3>Commercial Kitchens</h3></div>
+      <div class="industry-card"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><h3>Offices</h3></div>
+      <div class="industry-card"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5-10-5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><h3>Schools</h3></div>
+      <div class="industry-card"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 10h18M9 4v16" stroke="currentColor" stroke-width="1.6"/></svg><h3>Institutions</h3></div>
+      <div class="industry-card"><svg viewBox="0 0 24 24"><path d="M3 16V7a1 1 0 0 1 1-1h9v10M13 10h5l3 3v3h-2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><h3>Distributors</h3></div>
+    </div>
+  </div>
 </section>
 
-
-<!-- =========================
-     DEALER
-========================= -->
-
-<section class="section-padding dealer"
-         id="dealer">
-
-    <div class="container">
-
-        <div class="row align-items-center g-5">
-
-            <div class="col-lg-7 reveal">
-
-                <span class="text-uppercase fw-bold"
-                      style="letter-spacing:2px;color:#68e6b3;">
-                    BUSINESS OPPORTUNITY
-                </span>
-
-                <h2 class="mt-3">
-                    Become a Prabha Chemicals Dealer or Distributor
-                </h2>
-
-                <p class="mt-3">
-                    Grow your cleaning-products business with
-                    a reliable manufacturing partner.
-                </p>
-
-                <ul class="list-unstyled mt-4">
-
-                    <li>
-                        <i class="bi bi-check-circle-fill"></i>
-                        Multiple product categories
-                    </li>
-
-                    <li>
-                        <i class="bi bi-check-circle-fill"></i>
-                        Dealer-friendly support
-                    </li>
-
-                    <li>
-                        <i class="bi bi-check-circle-fill"></i>
-                        Attractive packaging options
-                    </li>
-
-                    <li>
-                        <i class="bi bi-check-circle-fill"></i>
-                        Customized product opportunities
-                    </li>
-
-                    <li>
-                        <i class="bi bi-check-circle-fill"></i>
-                        Regular product supply
-                    </li>
-
-                    <li>
-                        <i class="bi bi-check-circle-fill"></i>
-                        Business partnership support
-                    </li>
-
-                </ul>
-
-                <a href="#contact"
-                   class="btn btn-green mt-3">
-                    Become a Dealer
-                </a>
-
-            </div>
-
-
-            <div class="col-lg-5">
-
-                <div class="bg-white text-dark p-4 rounded-4 shadow">
-
-                    <h4 class="fw-bold">
-                        Dealer Enquiry
-                    </h4>
-
-                    <p>
-                        Tell us about your business requirement.
-                    </p>
-
-                    <a href="#contact"
-                       class="btn btn-main w-100">
-                        Submit Dealer Enquiry
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
+<!-- =========================================================
+     QUALITY / WHY PRABHA
+========================================================== -->
+<section class="section section-pale" id="why-prabha">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow eyebrow-dark">Quality &amp; Safety</p>
+      <h2 class="section-title">Quality Is Built Into Every Batch.</h2>
+      <p class="section-sub">A quality-focused approach from raw material selection to finished, packaged product.</p>
     </div>
 
+    <div class="quality-pipeline reveal">
+      <div class="pipeline-step"><span class="pipeline-icon">01</span><h3>Raw Materials</h3></div>
+      <div class="pipeline-arrow" aria-hidden="true">&rarr;</div>
+      <div class="pipeline-step"><span class="pipeline-icon">02</span><h3>Formulation</h3></div>
+      <div class="pipeline-arrow" aria-hidden="true">&rarr;</div>
+      <div class="pipeline-step"><span class="pipeline-icon">03</span><h3>Batch Control</h3></div>
+      <div class="pipeline-arrow" aria-hidden="true">&rarr;</div>
+      <div class="pipeline-step"><span class="pipeline-icon">04</span><h3>Quality Check</h3></div>
+      <div class="pipeline-arrow" aria-hidden="true">&rarr;</div>
+      <div class="pipeline-step"><span class="pipeline-icon">05</span><h3>Packaging</h3></div>
+    </div>
+
+    <div class="quality-grid">
+      <div class="quality-card reveal">
+        <h3>Formulation Focus</h3>
+        <ul class="check-list">
+          <li>Product documentation</li>
+          <li>Customer feedback loops</li>
+          <li>Continuous improvement</li>
+          <li>Batch consistency checks</li>
+        </ul>
+      </div>
+      <div class="quality-card quality-card-note reveal">
+        <h3>Gentle Formulation, Smart Cleaning</h3>
+        <p>Selected products can be developed with skin-friendly and pH-balanced formulation
+          requirements depending on the intended application and product specification.</p>
+        <p class="fine-print">Product suitability and skin-contact claims depend on the specific
+          formulation and applicable testing/certification.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- =========================================================
+     ABOUT
+========================================================== -->
+<section class="section section-white about-section" id="about">
+  <div class="container about-grid">
+    <div class="about-year reveal">
+      <span class="year-figure">2001</span>
+      <span class="year-caption">The year our journey began.</span>
+      <img src="assets/images/product-range.jpg" alt="Sembaruthi and Alfa Blue cleaning product range by Prabha Chemicals" loading="lazy" class="about-image">
+    </div>
+    <div class="about-copy reveal">
+      <p class="eyebrow eyebrow-dark">About Prabha Chemicals</p>
+      <h2 class="section-title">Trusted Cleaning Solutions Since 2001</h2>
+      <p>Prabha Chemicals Pvt Ltd manufactures cleaning and chemical products for homes,
+        businesses and professional applications under the Sembaruthi and Alfa&nbsp;Blue brand names.</p>
+      <p>Its portfolio covers laundry, dishwashing, floor care, professional cleaning and
+        customized solutions &mdash; formulated, batched and packed in-house.</p>
+      <ul class="check-list two-col">
+        <li>Quality-focused manufacturing</li>
+        <li>Attractive fragrance options</li>
+        <li>Customized formulation support</li>
+        <li>Dealer and distributor opportunities</li>
+        <li>Customer-focused service</li>
+        <li>25 years of manufacturing experience</li>
+      </ul>
+      <a href="#products" class="btn btn-primary">Explore Our Products</a>
+    </div>
+  </div>
+</section>
 
-<!-- =========================
+<!-- =========================================================
+     DEALER / DISTRIBUTOR
+========================================================== -->
+<section class="section section-navy dealer-section" id="dealership">
+  <div class="dealer-network" aria-hidden="true" id="dealerNetwork"></div>
+  <div class="container dealer-inner">
+    <p class="eyebrow">Business Opportunity</p>
+    <h2 class="section-title section-title-light">Grow With Prabha Chemicals.</h2>
+    <p class="section-sub section-sub-light dealer-sub">Become a Dealer or Distributor &mdash; Prabha Chemicals
+      provides multiple cleaning-product categories across the Sembaruthi and Alfa&nbsp;Blue lines, along with
+      business partnership opportunities.</p>
+
+    <ul class="dealer-points">
+      <li>Multiple product categories</li>
+      <li>Dealer-friendly support</li>
+      <li>Attractive packaging options</li>
+      <li>Customized product opportunities</li>
+      <li>Regular product supply</li>
+      <li>Business partnership support</li>
+    </ul>
+
+    <div class="dealer-ctas">
+      <button class="btn btn-accent btn-lg" data-requirement="Dealer">Apply as a Dealer</button>
+      <button class="btn btn-ghost-light btn-lg" data-requirement="Distributor">Apply as a Distributor</button>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
      FAQ
-========================= -->
-
-<section class="section-padding">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span class="small-title">
-                FAQ
-            </span>
-
-            <h2>
-                Frequently Asked Questions
-            </h2>
-
-        </div>
-
-
-        <div class="accordion"
-             id="faqAccordion">
-
-            <div class="accordion-item">
-
-                <h2 class="accordion-header">
-
-                    <button class="accordion-button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#faq1">
-
-                        What products does Prabha Chemicals manufacture?
-
-                    </button>
-
-                </h2>
-
-                <div id="faq1"
-                     class="accordion-collapse collapse show"
-                     data-bs-parent="#faqAccordion">
-
-                    <div class="accordion-body">
-
-                        Our product portfolio includes detergent
-                        washing powder, detergent soap, matic liquid,
-                        dishwash soap, dishwash liquid, floor cleaners,
-                        hotel and restaurant cleaning products and
-                        customized chemical solutions.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="accordion-item">
-
-                <h2 class="accordion-header">
-
-                    <button class="accordion-button collapsed"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#faq2">
-
-                        Do you provide customized chemicals?
-
-                    </button>
-
-                </h2>
-
-                <div id="faq2"
-                     class="accordion-collapse collapse"
-                     data-bs-parent="#faqAccordion">
-
-                    <div class="accordion-body">
-
-                        Yes. Customized formulation requirements can
-                        be discussed based on application, fragrance,
-                        colour, viscosity, pH specification, packaging
-                        and quantity requirements.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="accordion-item">
-
-                <h2 class="accordion-header">
-
-                    <button class="accordion-button collapsed"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#faq3">
-
-                        Do you supply hotel and restaurant cleaners?
-
-                    </button>
-
-                </h2>
-
-                <div id="faq3"
-                     class="accordion-collapse collapse"
-                     data-bs-parent="#faqAccordion">
-
-                    <div class="accordion-body">
-
-                        Yes. Professional cleaning solutions can be
-                        supplied for hotels, restaurants, cafes,
-                        catering and other commercial applications.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="accordion-item">
-
-                <h2 class="accordion-header">
-
-                    <button class="accordion-button collapsed"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#faq4">
-
-                        Can I become a dealer or distributor?
-
-                    </button>
-
-                </h2>
-
-                <div id="faq4"
-                     class="accordion-collapse collapse"
-                     data-bs-parent="#faqAccordion">
-
-                    <div class="accordion-body">
-
-                        Yes. Contact our business team with your
-                        location and business details to discuss
-                        dealer or distributor opportunities.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="accordion-item">
-
-                <h2 class="accordion-header">
-
-                    <button class="accordion-button collapsed"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#faq5">
-
-                        What pack sizes are available?
-
-                    </button>
-
-                </h2>
-
-                <div id="faq5"
-                     class="accordion-collapse collapse"
-                     data-bs-parent="#faqAccordion">
-
-                    <div class="accordion-body">
-
-                        Pack sizes can vary according to product
-                        and customer requirements. Bulk and customized
-                        packaging options can also be discussed.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
+========================================================== -->
+<section class="section section-white" id="faq">
+  <div class="container faq-container">
+    <div class="section-head reveal">
+      <p class="eyebrow eyebrow-dark">FAQ</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
     </div>
 
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h3><button class="accordion-trigger" aria-expanded="true" aria-controls="faq1">
+          What products does Prabha Chemicals manufacture?<span class="accordion-icon" aria-hidden="true"></span>
+        </button></h3>
+        <div class="accordion-panel" id="faq1">
+          <p>Our product portfolio includes detergent washing powder, detergent soap, matic
+            liquid, dishwash liquid, dishwash soap, floor cleaner, kitchen cleaner, glass
+            cleaner and customized chemical solutions &mdash; under the Sembaruthi and Alfa&nbsp;Blue brands.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq2">
+          Do you provide customized chemicals?<span class="accordion-icon" aria-hidden="true"></span>
+        </button></h3>
+        <div class="accordion-panel" id="faq2">
+          <p>Yes. Customized formulation requirements can be discussed based on application,
+            fragrance, colour, viscosity, pH specification, packaging and quantity requirements.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq3">
+          Do you supply hotel and restaurant cleaners?<span class="accordion-icon" aria-hidden="true"></span>
+        </button></h3>
+        <div class="accordion-panel" id="faq3">
+          <p>Yes. Professional cleaning solutions can be supplied for hotels, restaurants,
+            commercial kitchens, institutions and other commercial applications.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq4">
+          Can I become a dealer or distributor?<span class="accordion-icon" aria-hidden="true"></span>
+        </button></h3>
+        <div class="accordion-panel" id="faq4">
+          <p>Yes. Contact our business team with your location and business details to discuss
+            dealer or distributor opportunities.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3><button class="accordion-trigger" aria-expanded="false" aria-controls="faq5">
+          What pack sizes are available?<span class="accordion-icon" aria-hidden="true"></span>
+        </button></h3>
+        <div class="accordion-panel" id="faq5">
+          <p>Pack sizes vary by product and customer requirement &mdash; from small retail packs
+            up to bulk sizes. Contact us with your requirement and we&rsquo;ll confirm availability.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<!-- =========================
+<!-- =========================================================
      CONTACT
-========================= -->
-
-<section class="section-padding quality-section"
-         id="contact">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span class="small-title">
-                CONTACT US
-            </span>
-
-            <h2>
-                Let's Work Together
-            </h2>
-
-            <p>
-                Contact Prabha Chemicals for products,
-                bulk orders, dealer enquiries and customized
-                chemical requirements.
-            </p>
-
-        </div>
-
-
-        <div class="row g-5">
-
-            <div class="col-lg-5">
-
-                <div class="contact-card">
-
-                    <div class="d-flex gap-3">
-
-                        <div class="contact-icon">
-                            <i class="bi bi-telephone"></i>
-                        </div>
-
-                        <div>
-                            <h6 class="fw-bold text-dark">
-                                Call Us
-                            </h6>
-
-                            <p class="mb-0">
-                                +91 9600272562 
-                                +91 9003598962
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-card">
-
-                    <div class="d-flex gap-3">
-
-                        <div class="contact-icon">
-                            <i class="bi bi-envelope"></i>
-                        </div>
-
-                        <div>
-                            <h6 class="fw-bold text-dark">
-                                Email
-                            </h6>
-
-                            <p class="mb-0">
-                                prabhachemicals82@gmail.com
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-card">
-
-                    <div class="d-flex gap-3">
-
-                        <div class="contact-icon">
-                            <i class="bi bi-geo-alt"></i>
-                        </div>
-
-                        <div>
-                            <h6 class="fw-bold text-dark">
-                                Factory / Office
-                            </h6>
-
-                            <p class="mb-0">
-                                6/70 A, V.R.Garden,Kadathur Agraharam,Chinaseeragapadi(po),
-                                Kadathur,
-                                Salem (dt), 
-                                Tamilnadu,India-636 308.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-7">
-
-                <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
-
-                    <form id="contactForm">
-
-                        <div class="row g-3">
-
-                            <div class="col-md-6">
-
-                                <label class="form-label">
-                                    Name
-                                </label>
-
-                                <input type="text"
-                                       class="form-control"
-                                       required>
-
-                            </div>
-
-
-                            <div class="col-md-6">
-
-                                <label class="form-label">
-                                    Phone
-                                </label>
-
-                                <input type="tel"
-                                       class="form-control"
-                                       required>
-
-                            </div>
-
-
-                            <div class="col-md-6">
-
-                                <label class="form-label">
-                                    Email
-                                </label>
-
-                                <input type="email"
-                                       class="form-control">
-
-                            </div>
-
-
-                            <div class="col-md-6">
-
-                                <label class="form-label">
-                                    Company
-                                </label>
-
-                                <input type="text"
-                                       class="form-control">
-
-                            </div>
-
-
-                            <div class="col-md-6">
-
-                                <label class="form-label">
-                                    Requirement
-                                </label>
-
-                                <select class="form-select">
-
-                                    <option>
-                                        Select Requirement
-                                    </option>
-
-                                    <option>
-                                        Product Enquiry
-                                    </option>
-
-                                    <option>
-                                        Bulk Order
-                                    </option>
-
-                                    <option>
-                                        Dealer
-                                    </option>
-
-                                    <option>
-                                        Distributor
-                                    </option>
-
-                                    <option>
-                                        Customized Chemicals
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-
-                            <div class="col-md-6">
-
-                                <label class="form-label">
-                                    Product Category
-                                </label>
-
-                                <select class="form-select">
-
-                                    <option>
-                                        Select Product
-                                    </option>
-
-                                    <option>
-                                        Detergent Powder
-                                    </option>
-
-                                    <option>
-                                        Detergent Soap
-                                    </option>
-
-                                    <option>
-                                        Matic Liquid
-                                    </option>
-
-                                    <option>
-                                        Dishwash
-                                    </option>
-
-                                    <option>
-                                        Floor Cleaner
-                                    </option>
-
-                                    <option>
-                                        Hotel Cleaners
-                                    </option>
-
-                                    <option>
-                                        Customized Chemicals
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-
-                            <div class="col-12">
-
-                                <label class="form-label">
-                                    Message
-                                </label>
-
-                                <textarea class="form-control"
-                                          rows="5"
-                                          placeholder="Tell us about your requirement..."></textarea>
-
-                            </div>
-
-
-                            <div class="col-12">
-
-                                <button type="submit"
-                                        class="btn btn-main">
-                                    Send Enquiry
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </div>
-
+========================================================== -->
+<section class="section section-pale" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow eyebrow-dark">Contact Us</p>
+      <h2 class="section-title">Tell Us What You Need.</h2>
+      <p class="section-sub">We&rsquo;ll help build the right cleaning solution &mdash; for products, bulk
+        orders, dealer enquiries and customized chemical requirements.</p>
     </div>
 
+    <div class="contact-grid">
+      <div class="contact-cards reveal">
+        <div class="contact-card">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 5c0 8.3 6.7 15 15 15l2-4-6-2-2 2c-2-1-4-3-5-5l2-2-2-6-4 2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <h3>Call Us</h3>
+            <p><a href="tel:+919600272562">+91 96002 72562</a><br><a href="tel:+919003598962">+91 90035 98962</a></p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m4 6 8 7 8-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <h3>Email</h3>
+            <p><a href="mailto:prabhachemicals82@gmail.com">prabhachemicals82@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 22s7-6.6 7-12a7 7 0 0 0-14 0c0 5.4 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+          <div>
+            <h3>Factory / Office</h3>
+            <p>6/70&nbsp;A, V.R.&nbsp;Garden, Kadathur Agraharam, Chinaseeragapadi (PO),<br>
+              Kadathur, Salem (Dt), Tamil&nbsp;Nadu, India &ndash; 636 308.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal">
+        <form id="enquiryForm" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="fName">Name</label>
+              <input type="text" id="fName" name="name" required>
+            </div>
+            <div class="field">
+              <label for="fCompany">Company / Business Name</label>
+              <input type="text" id="fCompany" name="company">
+            </div>
+            <div class="field">
+              <label for="fPhone">Phone</label>
+              <input type="tel" id="fPhone" name="phone" required>
+            </div>
+            <div class="field">
+              <label for="fEmail">Email</label>
+              <input type="email" id="fEmail" name="email">
+            </div>
+            <div class="field">
+              <label for="fRequirement">Requirement Type</label>
+              <select id="fRequirement" name="requirement">
+                <option value="">Select requirement</option>
+                <option>Product Enquiry</option>
+                <option>Bulk Order</option>
+                <option>Dealer</option>
+                <option>Distributor</option>
+                <option>Customized Chemicals</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fProduct">Product</label>
+              <select id="fProduct" name="product">
+                <option value="">Select product (optional)</option>
+                <option>Detergent Washing Powder</option>
+                <option>Detergent Soap</option>
+                <option>Matic Liquid</option>
+                <option>Dishwash Liquid</option>
+                <option>Dishwash Soap</option>
+                <option>Floor Cleaner</option>
+                <option>Kitchen Cleaner</option>
+                <option>Glass Cleaner</option>
+                <option>Customized Chemicals</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fLocation">Location</label>
+              <input type="text" id="fLocation" name="location">
+            </div>
+            <div class="field field-full">
+              <label for="fMessage">Message</label>
+              <textarea id="fMessage" name="message" rows="4" placeholder="Tell us about your requirement..."></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-lg">Send via WhatsApp</button>
+            <a href="mailto:prabhachemicals82@gmail.com" class="form-mailto">or email us directly &rarr;</a>
+          </div>
+          <!--
+            No backend/CRM is connected to this form. Submitting builds a formatted
+            enquiry message and opens WhatsApp (wa.me) addressed to Prabha Chemicals
+            with the details pre-filled, so nothing is silently lost. See assets/js/main.js.
+          -->
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>
 
+</main>
 
-<!-- =========================
+<!-- =========================================================
      FOOTER
-========================= -->
-
-<footer>
-
-    <div class="container">
-
-        <div class="row g-5">
-
-            <div class="col-lg-4">
-
-                <h3>
-                    PRABHA <span style="color:#5ee8b1;">
-                    CHEMICALS
-                    </span>
-                </h3>
-
-                <p class="mt-3">
-
-                    Trusted Cleaning Solutions Since 2001.
-
-                    Manufacturing reliable cleaning products
-                    for households, businesses and professional
-                    applications.
-
-                </p>
-
-                <div class="social-icons mt-4">
-
-                    <a href="#" aria-label="WhatsApp">
-                        <i class="bi bi-whatsapp"></i>
-                    </a>
-
-                    <a href="#" aria-label="Facebook">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-
-                    <a href="#" aria-label="Instagram">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-
-                    <a href="#" aria-label="LinkedIn">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-6 col-lg-2">
-
-                <h5>
-                    Company
-                </h5>
-
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#quality">Quality</a>
-                <a href="#contact">Contact</a>
-
-            </div>
-
-
-            <div class="col-6 col-lg-3">
-
-                <h5>
-                    Products
-                </h5>
-
-                <a href="#products">Detergent Powder</a>
-                <a href="#products">Detergent Soap</a>
-                <a href="#products">Matic Liquid</a>
-                <a href="#products">Dishwash</a>
-                <a href="#products">Floor Cleaner</a>
-                <a href="#custom">Customized Chemicals</a>
-
-            </div>
-
-
-            <div class="col-lg-3">
-
-                <h5>
-                    Business
-                </h5>
-
-                <a href="#dealer">
-                    Dealer & Distributor
-                </a>
-
-                <a href="#custom">
-                    Customized Chemicals
-                </a>
-
-                <a href="#contact">
-                    Bulk Orders
-                </a>
-
-                <p class="mt-3">
-                    <i class="bi bi-telephone"></i>
-                    +91 9600272562 ; 
-                    +91 9003598962.
-                </p>
-
-                <p>
-                    <i class="bi bi-envelope"></i>
-                    prabhachemicals82@gmail.com
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="copyright">
-
-            © 2001–2026
-            <strong>
-                PRABHA CHEMICALS PVT LTD
-            </strong>.
-            All Rights Reserved.
-
-        </div>
-
+========================================================== -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <p class="footer-name">PRABHA <span>CHEMICALS</span></p>
+      <p class="footer-tagline">Trusted Cleaning Solutions Since 2001</p>
+      <p class="footer-desc">Manufacturing reliable cleaning products for households, businesses
+        and professional applications under the Sembaruthi and Alfa&nbsp;Blue brand names.</p>
     </div>
-
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#why-prabha">Why Prabha</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Product Categories</h4>
+      <span>Laundry</span>
+      <span>Dishwash</span>
+      <span>Floor Care</span>
+      <span>Professional Cleaning</span>
+      <span>Customized Chemicals</span>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+919600272562">+91 96002 72562</a>
+      <a href="tel:+919003598962">+91 90035 98962</a>
+      <a href="mailto:prabhachemicals82@gmail.com">prabhachemicals82@gmail.com</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; 2001&ndash;2026 <strong>Prabha Chemicals Pvt Ltd</strong>. All rights reserved.</p>
+  </div>
 </footer>
 
+<!-- =========================================================
+     PRODUCT DRAWER
+========================================================== -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="product-drawer" id="productDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" tabindex="-1">
+  <button class="drawer-close" id="drawerClose" aria-label="Close product details">&times;</button>
+  <div class="drawer-content" id="drawerContent"></div>
+</aside>
 
-<!-- =========================
-     PRODUCT MODAL
-========================= -->
-
-<div class="modal fade"
-     id="productModal"
-     tabindex="-1">
-
-    <div class="modal-dialog modal-dialog-centered">
-
-        <div class="modal-content">
-
-            <div class="modal-header">
-
-                <h5 class="modal-title"
-                    id="modalProductName">
-                    Product Details
-                </h5>
-
-                <button type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal">
-                </button>
-
-            </div>
-
-            <div class="modal-body">
-
-                <div class="text-center">
-
-                    <i class="bi bi-droplet-half"
-                       style="font-size:70px;color:#0757a0;">
-                    </i>
-
-                    <h4 class="mt-3"
-                        id="modalProductTitle">
-                        Product
-                    </h4>
-
-                    <p>
-                        Reliable cleaning solution from
-                        PRABHA CHEMICALS PVT LTD.
-                    </p>
-
-                    <hr>
-
-                    <div class="text-start">
-
-                        <p>
-                            <strong>Features:</strong>
-                        </p>
-
-                        <ul>
-
-                            <li>
-                                Quality-focused formulation
-                            </li>
-
-                            <li>
-                                Pleasant fragrance options
-                            </li>
-
-                            <li>
-                                Product-specific applications
-                            </li>
-
-                            <li>
-                                Multiple packaging options
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                    <a href="#contact"
-                       class="btn btn-main w-100"
-                       data-bs-dismiss="modal">
-                        Request Product Quote
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     WHATSAPP
-========================= -->
-
-<a href="https://wa.me/91 9600272562"
-   class="whatsapp"
-   target="_blank"
-   aria-label="WhatsApp">
-
-    <i class="bi bi-whatsapp"></i>
-
+<!-- Floating actions -->
+<a class="whatsapp-fab" href="https://wa.me/919600272562?text=Hi%20Prabha%20Chemicals%2C%20I%27d%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener" aria-label="Chat with Prabha Chemicals on WhatsApp">
+  <span class="fab-tooltip">Chat with Prabha Chemicals</span>
+  <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12.04 2c-5.5 0-10 4.5-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38A9.94 9.94 0 0 0 12.04 22c5.5 0 10-4.5 10-10s-4.5-10-10-10Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.2 8.2 0 1 1 7 3.87Zm4.5-6.15c-.25-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.25-.63.8-.78.96-.14.16-.28.18-.53.06-.25-.12-1.06-.39-2.02-1.24-.75-.66-1.25-1.48-1.4-1.73-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.04 0 1.2.88 2.37 1 2.53.12.16 1.73 2.64 4.2 3.7.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.45-.59 1.66-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28Z"/></svg>
 </a>
 
-
-<!-- =========================
-     BACK TO TOP
-========================= -->
-
-<button id="backTop">
-
-    <i class="bi bi-arrow-up"></i>
-
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
 
-
-<!-- =========================
-     BOOTSTRAP JS
-========================= -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
-
-
-<script>
-
-    /* =========================
-       PRODUCT FILTER
-    ========================== */
-
-    const filterButtons =
-        document.querySelectorAll(".filter-btn");
-
-    const productItems =
-        document.querySelectorAll(".product-item");
-
-    filterButtons.forEach(button => {
-
-        button.addEventListener("click", function () {
-
-            filterButtons.forEach(btn =>
-                btn.classList.remove("active"));
-
-            this.classList.add("active");
-
-            const filter =
-                this.getAttribute("data-filter");
-
-            productItems.forEach(item => {
-
-                if (
-                    filter === "all" ||
-                    item.dataset.category === filter
-                ) {
-
-                    item.style.display = "";
-
-                } else {
-
-                    item.style.display = "none";
-
-                }
-
-            });
-
-        });
-
-    });
-
-
-    /* =========================
-       PRODUCT SEARCH
-    ========================== */
-
-    const searchInput =
-        document.getElementById("productSearch");
-
-    searchInput.addEventListener("input", function () {
-
-        const search =
-            this.value.toLowerCase().trim();
-
-        productItems.forEach(item => {
-
-            const name =
-                item.dataset.name.toLowerCase();
-
-            if (name.includes(search)) {
-
-                item.style.display = "";
-
-            } else {
-
-                item.style.display = "none";
-
-            }
-
-        });
-
-    });
-
-
-    /* =========================
-       PRODUCT MODAL
-    ========================== */
-
-    const productModal =
-        document.getElementById("productModal");
-
-    productModal.addEventListener(
-        "show.bs.modal",
-        function(event) {
-
-            const button = event.relatedTarget;
-
-            const product =
-                button.getAttribute("data-product");
-
-            document.getElementById(
-                "modalProductName"
-            ).textContent = product;
-
-            document.getElementById(
-                "modalProductTitle"
-            ).textContent = product;
-
-        }
-    );
-
-
-    /* =========================
-       SCROLL REVEAL
-    ========================== */
-
-    function revealOnScroll() {
-
-        const reveals =
-            document.querySelectorAll(".reveal");
-
-        reveals.forEach(element => {
-
-            const windowHeight =
-                window.innerHeight;
-
-            const elementTop =
-                element.getBoundingClientRect().top;
-
-            if (elementTop <
-                windowHeight - 80) {
-
-                element.classList.add("active");
-
-            }
-
-        });
-
-    }
-
-    window.addEventListener(
-        "scroll",
-        revealOnScroll
-    );
-
-    revealOnScroll();
-
-
-    /* =========================
-       BACK TO TOP
-    ========================== */
-
-    const backTop =
-        document.getElementById("backTop");
-
-    window.addEventListener("scroll", function() {
-
-        if (window.scrollY > 500) {
-
-            backTop.style.display = "block";
-
-        } else {
-
-            backTop.style.display = "none";
-
-        }
-
-    });
-
-    backTop.addEventListener("click", function() {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    });
-
-
-    /* =========================
-       CONTACT FORM
-    ========================== */
-
-    document.getElementById("contactForm")
-        .addEventListener("submit", function(event) {
-
-            event.preventDefault();
-
-            alert(
-                "Thank you for contacting PRABHA CHEMICALS PVT LTD. " +
-                "Your enquiry form is ready to be connected to email, WhatsApp or a backend."
-            );
-
-            this.reset();
-
-        });
-
-
-    /* =========================
-       MOBILE NAVBAR AUTO CLOSE
-    ========================== */
-
-    document.querySelectorAll(
-        ".navbar-nav .nav-link"
-    ).forEach(link => {
-
-        link.addEventListener("click", function() {
-
-            const navbar =
-                document.querySelector(".navbar-collapse");
-
-            if (navbar.classList.contains("show")) {
-
-                const bsCollapse =
-                    bootstrap.Collapse.getInstance(navbar);
-
-                if (bsCollapse) {
-                    bsCollapse.hide();
-                }
-
-            }
-
-        });
-
-    });
-
-</script>
-
+<script src="assets/js/main.js"></script>
 </body>
 </html>
