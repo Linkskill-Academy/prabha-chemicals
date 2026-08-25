@@ -26,6 +26,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="preload" as="image" href="assets/images/hero-collage.webp" fetchpriority="high">
 
 <!-- Structured data: only verified facts (no fabricated address/ratings/certifications) -->
 <script type="application/ld+json">
@@ -109,7 +110,6 @@
      HERO
 ========================================================== -->
 <section class="hero" id="home">
-  <div class="hero-particles" aria-hidden="true" id="heroParticles"></div>
   <div class="container hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">Cleaning Science &mdash; Since 2001</p>
@@ -119,132 +119,64 @@
       </h1>
       <p class="hero-sub">
         Prabha Chemicals manufactures Sembaruthi &amp; Alfa Blue cleaning and chemical
-        solutions for homes, institutions, hotels, restaurants, businesses,
-        distributors and customized applications.
+        solutions for homes, institutions, hotels, restaurants and businesses.
       </p>
       <div class="hero-ctas">
         <a href="#products" class="btn btn-primary btn-lg magnetic">
           Explore Products <span class="arrow" aria-hidden="true">&rarr;</span>
         </a>
-        <a href="#contact" class="btn btn-ghost-light btn-lg magnetic">Request a Quote</a>
+        <a href="#contact" class="btn btn-ghost-dark btn-lg magnetic">Request a Quote</a>
       </div>
       <a href="#dealership" class="hero-tertiary">Become a Distributor <span aria-hidden="true">&rarr;</span></a>
-
-      <dl class="hero-stats" aria-label="Company highlights">
-        <div><dt><span class="count-up" data-count="2001">0</span></dt><dd>Manufacturing since</dd></div>
-        <div><dt><span class="count-up" data-count="9">0</span>+</dt><dd>Product formulations</dd></div>
-        <div><dt><span class="count-up" data-count="2">0</span></dt><dd>Trusted brands</dd></div>
-      </dl>
     </div>
 
-    <div class="hero-visual" aria-hidden="true">
-      <svg class="flask-svg" viewBox="0 0 420 480" role="img" aria-label="Illustration of a laboratory flask with chemical liquid">
-        <defs>
-          <linearGradient id="liquidGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#22d3ee"/>
-            <stop offset="100%" stop-color="#0891b2"/>
-          </linearGradient>
-          <radialGradient id="glowGrad" cx="50%" cy="45%" r="60%">
-            <stop offset="0%" stop-color="#22d3ee" stop-opacity=".45"/>
-            <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-
-        <circle class="orbit-ring" cx="210" cy="230" r="185" fill="none" stroke="#8be9ff" stroke-opacity=".18" stroke-width="1"/>
-        <circle class="orbit-ring orbit-ring-2" cx="210" cy="230" r="150" fill="none" stroke="#8be9ff" stroke-opacity=".14" stroke-width="1"/>
-
-        <circle cx="210" cy="230" r="150" fill="url(#glowGrad)"/>
-
-        <!-- flask -->
-        <g class="flask-body">
-          <path d="M170 70h80v90l58 130a26 26 0 0 1-24 36H136a26 26 0 0 1-24-36l58-130V70Z"
-                fill="rgba(255,255,255,0.06)" stroke="rgba(139,233,255,0.55)" stroke-width="2.5"/>
-          <path d="M160 70h100" stroke="rgba(139,233,255,0.55)" stroke-width="2.5" stroke-linecap="round"/>
-          <clipPath id="flaskClip">
-            <path d="M170 160l-52 118a24 24 0 0 0 22 34h140a24 24 0 0 0 22-34l-52-118Z"/>
-          </clipPath>
-          <g clip-path="url(#flaskClip)">
-            <rect class="liquid-wave" x="90" y="190" width="240" height="140" fill="url(#liquidGrad)"/>
-            <path class="liquid-surface" d="M90 196 Q 130 182 170 196 T 250 196 T 330 196 V340 H90 Z" fill="url(#liquidGrad)" opacity=".9"/>
+    <div class="hero-visual">
+      <div class="hero-photo-frame">
+        <picture>
+          <source srcset="assets/images/hero-collage.webp" type="image/webp">
+          <img src="assets/images/hero-collage.jpg" alt="Prabha Chemicals in real life: fresh laundry care, home floor cleaning, dishwashing and hotel housekeeping" width="1116" height="821" fetchpriority="high">
+        </picture>
+        <svg class="hero-photo-particles" viewBox="0 0 420 300" aria-hidden="true">
+          <g class="molecule molecule-1">
+            <line x1="370" y1="46" x2="398" y2="26" stroke="#0891b2" stroke-width="1.6"/>
+            <circle cx="370" cy="46" r="4.5" fill="#0891b2"/>
+            <circle cx="398" cy="26" r="3" fill="#ffffff"/>
           </g>
-        </g>
-
-        <!-- rising bubbles -->
-        <g class="bubbles">
-          <circle class="bubble" cx="180" cy="300" r="4"/>
-          <circle class="bubble" cx="200" cy="310" r="3"/>
-          <circle class="bubble" cx="225" cy="295" r="5"/>
-          <circle class="bubble" cx="245" cy="305" r="3"/>
-          <circle class="bubble" cx="195" cy="280" r="2.5"/>
-        </g>
-
-        <!-- orbiting molecule cluster -->
-        <g class="molecule molecule-1">
-          <line x1="330" y1="120" x2="365" y2="95" stroke="#a3e635" stroke-width="2"/>
-          <line x1="330" y1="120" x2="330" y2="150" stroke="#a3e635" stroke-width="2"/>
-          <circle cx="330" cy="120" r="7" fill="#a3e635"/>
-          <circle cx="365" cy="95" r="5" fill="#eefcff"/>
-          <circle cx="330" cy="150" r="5" fill="#eefcff"/>
-        </g>
-        <g class="molecule molecule-2">
-          <line x1="70" y1="330" x2="45" y2="360" stroke="#22d3ee" stroke-width="2"/>
-          <line x1="70" y1="330" x2="100" y2="345" stroke="#22d3ee" stroke-width="2"/>
-          <circle cx="70" cy="330" r="6" fill="#22d3ee"/>
-          <circle cx="45" cy="360" r="4" fill="#eefcff"/>
-          <circle cx="100" cy="345" r="4" fill="#eefcff"/>
-        </g>
-        <g class="molecule molecule-3">
-          <line x1="90" y1="110" x2="60" y2="90" stroke="#34d399" stroke-width="2"/>
-          <circle cx="90" cy="110" r="5" fill="#34d399"/>
-          <circle cx="60" cy="90" r="3.5" fill="#eefcff"/>
-        </g>
-
-        <!-- droplets -->
-        <path class="droplet droplet-1" d="M300 260c8 10 8 20-0 20s-8-10 0-20Z" fill="#8be9ff" opacity=".8"/>
-        <path class="droplet droplet-2" d="M120 250c6 8 6 16 0 16s-6-8 0-16Z" fill="#8be9ff" opacity=".7"/>
-      </svg>
-
-      <div class="floating-label label-1">Laundry Care</div>
-      <div class="floating-label label-2">Surface Care</div>
-      <div class="floating-label label-3">Professional Cleaning</div>
-      <div class="floating-label label-4">Custom Formulation</div>
+        </svg>
+      </div>
     </div>
   </div>
 
-  <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,64 C240,110 480,20 720,50 C960,80 1200,110 1440,60 L1440,120 L0,120 Z" fill="var(--white)"/>
-  </svg>
-</section>
+  <div class="hero-trust-bar-wrap">
+    <svg class="hero-wave" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="heroWaveGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#0891b2"/>
+          <stop offset="100%" stop-color="#22d3ee"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,70 C240,120 480,20 720,55 C960,90 1200,120 1440,65 L1440,140 L0,140 Z" fill="url(#heroWaveGrad)" opacity=".16"/>
+      <path d="M0,90 C240,135 480,45 720,75 C960,105 1200,135 1440,85 L1440,140 L0,140 Z" fill="var(--white)"/>
+    </svg>
 
-<!-- =========================================================
-     TRUST STRIP
-========================================================== -->
-<section class="trust-strip">
-  <div class="container trust-strip-inner">
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4M12 18v4M4 12H2m20 0h-2M6 6l1.4 1.4M16.6 16.6 18 18M6 18l1.4-1.4M16.6 7.4 18 6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
-      <span>Since 2001</span>
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Quality-Focused Manufacturing</span>
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11Z" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
-      <span>Custom Formulations</span>
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
-      <span>Bulk Supply</span>
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="8" r="3" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="17" cy="8" r="3" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M2 20c0-3 2.5-5 5-5s5 2 5 5M12 20c0-3 2.5-5 5-5s5 2 5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
-      <span>Dealer Network</span>
-    </div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9" width="6" height="11" rx="1" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="14" y="4" width="6" height="16" rx="1" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
-      <span>Multiple Pack Sizes</span>
-    </div>
+    <dl class="hero-trust-bar container" aria-label="Company highlights">
+      <div>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4M12 18v4M4 12H2m20 0h-2M6 6l1.4 1.4M16.6 16.6 18 18M6 18l1.4-1.4M16.6 7.4 18 6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+        <div><dt>Since 2001</dt><dd>Trusted cleaning solutions</dd></div>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11Z" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+        <div><dt>Custom Formulations</dt><dd>Tailored for your requirement</dd></div>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+        <div><dt>Bulk Supply</dt><dd>Reliable, consistent supply</dd></div>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="8" r="3" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="17" cy="8" r="3" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M2 20c0-3 2.5-5 5-5s5 2 5 5M12 20c0-3 2.5-5 5-5s5 2 5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+        <div><dt>Dealer Network</dt><dd>Grow with Prabha Chemicals</dd></div>
+      </div>
+    </dl>
   </div>
 </section>
 
@@ -271,6 +203,38 @@
     </div>
 
     <div class="product-grid" id="productGrid" aria-live="polite"></div>
+
+    <div class="editorial-row">
+      <article class="editorial-card reveal">
+        <div class="editorial-media">
+          <picture>
+            <source srcset="assets/images/lifestyle-laundry.webp" type="image/webp">
+            <img src="assets/images/lifestyle-laundry.jpg" alt="Woman enjoying freshly washed laundry at home" width="1200" height="800" loading="lazy">
+          </picture>
+        </div>
+        <div class="editorial-body">
+          <p class="editorial-eyebrow">Laundry Care</p>
+          <h3>Fresh Laundry, Every Wash</h3>
+          <p>Detergent Washing Powder, Detergent Soap, Matic Liquid and Liquid Detergent &mdash; formulated for clean, fresh-smelling clothes wash after wash.</p>
+          <button class="editorial-cta" type="button" data-filter-jump="laundry">Shop Laundry Care <span class="arrow" aria-hidden="true">&rarr;</span></button>
+        </div>
+      </article>
+
+      <article class="editorial-card reverse reveal">
+        <div class="editorial-media">
+          <picture>
+            <source srcset="assets/images/lifestyle-dishwash-kitchen.webp" type="image/webp">
+            <img src="assets/images/lifestyle-dishwash-kitchen.jpg" alt="Woman washing dishes at a home kitchen sink" width="1200" height="675" loading="lazy">
+          </picture>
+        </div>
+        <div class="editorial-body">
+          <p class="editorial-eyebrow">Dishwash &amp; Kitchen</p>
+          <h3>Sparkling Dishes, Grease-Free Kitchens</h3>
+          <p>Dishwash Liquid, Dishwash Soap and Kitchen Cleaner cut through grease on utensils and surfaces &mdash; gentle on hands, tough on residue.</p>
+          <button class="editorial-cta" type="button" data-filter-jump="dishwash">Shop Dishwash Range <span class="arrow" aria-hidden="true">&rarr;</span></button>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -278,7 +242,12 @@
      FRAGRANCE
 ========================================================== -->
 <section class="section section-navy fragrance-section" id="fragrance">
-  <div class="hero-particles" aria-hidden="true"></div>
+  <div class="fragrance-watertexture" aria-hidden="true">
+    <picture>
+      <source srcset="assets/images/water-wave.webp" type="image/webp">
+      <img src="assets/images/water-wave.jpg" alt="" loading="lazy">
+    </picture>
+  </div>
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">Fragrance Experience</p>
@@ -288,14 +257,14 @@
     </div>
 
     <div class="orb-grid reveal">
-      <button class="orb-card" data-orb="jasmine"><span class="orb orb-jasmine"></span><span class="orb-label">Jasmine</span></button>
-      <button class="orb-card" data-orb="lemon"><span class="orb orb-lemon"></span><span class="orb-label">Lemon Fresh</span></button>
-      <button class="orb-card" data-orb="rose"><span class="orb orb-rose"></span><span class="orb-label">Rose</span></button>
-      <button class="orb-card" data-orb="ocean"><span class="orb orb-ocean"></span><span class="orb-label">Ocean Fresh</span></button>
-      <button class="orb-card" data-orb="lavender"><span class="orb orb-lavender"></span><span class="orb-label">Lavender</span></button>
-      <button class="orb-card" data-orb="citrus"><span class="orb orb-citrus"></span><span class="orb-label">Citrus</span></button>
-      <button class="orb-card" data-orb="floral"><span class="orb orb-floral"></span><span class="orb-label">Floral Fresh</span></button>
-      <button class="orb-card" data-orb="custom"><span class="orb orb-custom"></span><span class="orb-label">Custom</span></button>
+      <button class="orb-card orb-anim-float" data-orb="jasmine"><span class="orb" style="background-image:url('assets/images/fragrance/jasmine.jpg')"></span><span class="orb-label">Jasmine</span></button>
+      <button class="orb-card orb-anim-tilt" data-orb="lemon"><span class="orb" style="background-image:url('assets/images/fragrance/lemon.jpg')"></span><span class="orb-label">Lemon Fresh</span></button>
+      <button class="orb-card orb-anim-breathe" data-orb="rose"><span class="orb" style="background-image:url('assets/images/fragrance/rose.jpg')"></span><span class="orb-label">Rose</span></button>
+      <button class="orb-card orb-anim-wave" data-orb="ocean"><span class="orb" style="background-image:url('assets/images/fragrance/ocean.jpg')"></span><span class="orb-label">Ocean Fresh</span></button>
+      <button class="orb-card orb-anim-sway" data-orb="lavender"><span class="orb" style="background-image:url('assets/images/fragrance/lavender.jpg')"></span><span class="orb-label">Lavender</span></button>
+      <button class="orb-card orb-anim-tilt" data-orb="citrus"><span class="orb" style="background-image:url('assets/images/fragrance/citrus.jpg')"></span><span class="orb-label">Citrus</span></button>
+      <button class="orb-card orb-anim-float" data-orb="floral"><span class="orb" style="background-image:url('assets/images/fragrance/floral.jpg')"></span><span class="orb-label">Floral Fresh</span></button>
+      <button class="orb-card orb-anim-mint" data-orb="custom"><span class="orb" style="background-image:url('assets/images/fragrance/mint.jpg')"></span><span class="orb-label">Custom</span></button>
     </div>
     <p class="fragrance-note reveal">Fragrance availability varies by product &mdash; ask us which options apply to your requirement.</p>
   </div>
@@ -361,6 +330,30 @@
       <div class="industry-card"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 10h18M9 4v16" stroke="currentColor" stroke-width="1.6"/></svg><h3>Institutions</h3></div>
       <div class="industry-card"><svg viewBox="0 0 24 24"><path d="M3 16V7a1 1 0 0 1 1-1h9v10M13 10h5l3 3v3h-2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><h3>Distributors</h3></div>
     </div>
+
+    <div class="industries-photo-strip reveal">
+      <figure class="strip-photo strip-photo-lg">
+        <picture>
+          <source srcset="assets/images/lifestyle-hotel-housekeeping.webp" type="image/webp">
+          <img src="assets/images/lifestyle-hotel-housekeeping.jpg" alt="Hotel housekeeping staff preparing a guest room" width="1200" height="675" loading="lazy">
+        </picture>
+        <figcaption>Hotels &amp; Hospitality</figcaption>
+      </figure>
+      <figure class="strip-photo">
+        <picture>
+          <source srcset="assets/images/lifestyle-commercial-kitchen.webp" type="image/webp">
+          <img src="assets/images/lifestyle-commercial-kitchen.jpg" alt="Chef cleaning a commercial kitchen countertop" width="1200" height="675" loading="lazy">
+        </picture>
+        <figcaption>Commercial Kitchens</figcaption>
+      </figure>
+      <figure class="strip-photo">
+        <picture>
+          <source srcset="assets/images/lifestyle-floor-mopping.webp" type="image/webp">
+          <img src="assets/images/lifestyle-floor-mopping.jpg" alt="Woman mopping a bright home living room floor" width="1200" height="675" loading="lazy">
+        </picture>
+        <figcaption>Home &amp; Floor Care</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -374,6 +367,13 @@
       <h2 class="section-title">Quality Is Built Into Every Batch.</h2>
       <p class="section-sub">A quality-focused approach from raw material selection to finished, packaged product.</p>
     </div>
+
+    <figure class="quality-photo reveal">
+      <picture>
+        <source srcset="assets/images/lifestyle-manufacturing-quality.webp" type="image/webp">
+        <img src="assets/images/lifestyle-manufacturing-quality.jpg" alt="Quality technician inspecting a bottle on the production line" width="1200" height="675" loading="lazy">
+      </picture>
+    </figure>
 
     <div class="quality-pipeline reveal">
       <div class="pipeline-step"><span class="pipeline-icon">01</span><h3>Raw Materials</h3></div>
@@ -442,6 +442,12 @@
      DEALER / DISTRIBUTOR
 ========================================================== -->
 <section class="section section-navy dealer-section" id="dealership">
+  <div class="dealer-photo" aria-hidden="true">
+    <picture>
+      <source srcset="assets/images/lifestyle-dealer-handshake.webp" type="image/webp">
+      <img src="assets/images/lifestyle-dealer-handshake.jpg" alt="" width="1200" height="675" loading="lazy">
+    </picture>
+  </div>
   <div class="dealer-network" aria-hidden="true" id="dealerNetwork"></div>
   <div class="container dealer-inner">
     <p class="eyebrow">Business Opportunity</p>
@@ -531,7 +537,13 @@
 <!-- =========================================================
      CONTACT
 ========================================================== -->
-<section class="section section-pale" id="contact">
+<section class="section section-pale contact-section" id="contact">
+  <div class="contact-watertexture" aria-hidden="true">
+    <picture>
+      <source srcset="assets/images/water-wave.webp" type="image/webp">
+      <img src="assets/images/water-wave.jpg" alt="" loading="lazy">
+    </picture>
+  </div>
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow eyebrow-dark">Contact Us</p>

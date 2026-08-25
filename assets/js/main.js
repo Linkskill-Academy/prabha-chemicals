@@ -75,25 +75,6 @@
   document.querySelectorAll(".reveal").forEach(function (el) { revealObserver.observe(el); });
 
   /* -----------------------------------------------------------
-     HERO PARTICLES (rising bubbles), skipped on reduced-motion
-  ----------------------------------------------------------- */
-  var heroParticles = document.getElementById("heroParticles");
-  if (heroParticles && !reduceMotion) {
-    var count = isMobile ? 8 : 18;
-    for (var i = 0; i < count; i++) {
-      var p = document.createElement("span");
-      p.className = "particle";
-      var size = 3 + Math.random() * 6;
-      p.style.width = size + "px";
-      p.style.height = size + "px";
-      p.style.left = Math.random() * 100 + "%";
-      p.style.animationDuration = (8 + Math.random() * 10) + "s";
-      p.style.animationDelay = (Math.random() * 10) + "s";
-      heroParticles.appendChild(p);
-    }
-  }
-
-  /* -----------------------------------------------------------
      DEALER NETWORK decorative nodes
   ----------------------------------------------------------- */
   var dealerNetwork = document.getElementById("dealerNetwork");
@@ -132,33 +113,6 @@
     });
     dealerNetwork.appendChild(svg);
   }
-
-  /* -----------------------------------------------------------
-     COUNT-UP NUMBERS
-  ----------------------------------------------------------- */
-  var countEls = document.querySelectorAll(".count-up");
-  var countObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
-      var el = entry.target;
-      var target = parseInt(el.getAttribute("data-count"), 10);
-      countObserver.unobserve(el);
-      if (reduceMotion) { el.textContent = target; return; }
-      var start = 0;
-      var duration = 1400;
-      var startTime = null;
-      function step(ts) {
-        if (!startTime) startTime = ts;
-        var progress = Math.min((ts - startTime) / duration, 1);
-        var eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(start + (target - start) * eased);
-        if (progress < 1) requestAnimationFrame(step);
-        else el.textContent = target;
-      }
-      requestAnimationFrame(step);
-    });
-  }, { threshold: 0.6 });
-  countEls.forEach(function (el) { countObserver.observe(el); });
 
   /* -----------------------------------------------------------
      FORMULATION TIMELINE ACTIVATION
@@ -327,11 +281,21 @@
   renderProducts("all");
 
   var filterButtons = document.querySelectorAll(".seg-btn");
+  function activateFilter(filterValue) {
+    filterButtons.forEach(function (b) {
+      var isMatch = b.getAttribute("data-filter") === filterValue;
+      b.classList.toggle("active", isMatch);
+      b.setAttribute("aria-selected", String(isMatch));
+    });
+    renderProducts(filterValue);
+  }
   filterButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () { activateFilter(btn.getAttribute("data-filter")); });
+  });
+  document.querySelectorAll("[data-filter-jump]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      filterButtons.forEach(function (b) { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
-      btn.classList.add("active"); btn.setAttribute("aria-selected", "true");
-      renderProducts(btn.getAttribute("data-filter"));
+      activateFilter(btn.getAttribute("data-filter-jump"));
+      document.getElementById("productGrid").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
     });
   });
 
