@@ -327,11 +327,21 @@
   renderProducts("all");
 
   var filterButtons = document.querySelectorAll(".seg-btn");
+  function activateFilter(filterValue) {
+    filterButtons.forEach(function (b) {
+      var isMatch = b.getAttribute("data-filter") === filterValue;
+      b.classList.toggle("active", isMatch);
+      b.setAttribute("aria-selected", String(isMatch));
+    });
+    renderProducts(filterValue);
+  }
   filterButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () { activateFilter(btn.getAttribute("data-filter")); });
+  });
+  document.querySelectorAll("[data-filter-jump]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      filterButtons.forEach(function (b) { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
-      btn.classList.add("active"); btn.setAttribute("aria-selected", "true");
-      renderProducts(btn.getAttribute("data-filter"));
+      activateFilter(btn.getAttribute("data-filter-jump"));
+      document.getElementById("productGrid").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
     });
   });
 
