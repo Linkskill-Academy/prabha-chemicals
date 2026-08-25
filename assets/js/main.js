@@ -246,7 +246,7 @@
     if (p.img) {
       return '<div class="product-media">' +
         '<span class="product-brand-tag">' + p.brand + '</span>' +
-        '<img src="' + p.img + '" alt="' + p.name + ' by Prabha Chemicals" loading="lazy" width="600" height="450">' +
+        '<img src="' + p.img + '" alt="' + p.name + ' by Prabha Chemicals" loading="eager" decoding="async" width="600" height="450">' +
         '<span class="media-bubbles" aria-hidden="true">' +
           '<span style="left:30%;animation-delay:.1s"></span><span style="left:55%;animation-delay:.6s"></span><span style="left:75%;animation-delay:1.1s"></span>' +
         '</span></div>';
