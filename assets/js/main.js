@@ -203,7 +203,7 @@
     },
     {
       id: "custom", name: "Customized Chemicals", brand: "Prabha Chemicals",
-      cats: ["customized"], img: null,
+      cats: ["customized"], img: "assets/images/customized-chemicals.jpg",
       benefit: "Fully customized formulation solutions developed to your requirement, application and specification.",
       pack: "Packaging &amp; quantity discussed per project",
       features: ["Requirement-based formulation", "Custom fragrance &amp; colour", "Custom packaging"]
